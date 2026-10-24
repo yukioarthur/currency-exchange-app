@@ -2,6 +2,8 @@
 
 Criados em 23/10/2026. [Abrir arquivo editável no Figma](https://www.figma.com/design/rgsHk6WPseuvUMbXtuAd2z).
 
+**Revisão de 24/10/2026:** tema escuro, inglês, gráfico detalhado e indicadores estão na prévia local descrita em [ENHANCEMENTS.md](ENHANCEMENTS.md). O Figma permanece na versão de 23/10 porque a integração atingiu o limite de chamadas do plano Starter. Não considerar as imagens abaixo evidência dos novos recursos. Sincronização pendente.
+
 ## Telas
 
 | Entrega | Figma | Evidência local |

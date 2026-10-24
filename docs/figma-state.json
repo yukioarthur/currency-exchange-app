@@ -12,5 +12,6 @@
     "statesMobile": "3:278"
   },
   "collectionId": "VariableCollectionId:2:287",
-  "validation": "Six compositions visually checked; Inter; editable text, instances and vectors. Static prototypes only."
+  "validation": "Six original compositions visually checked; Inter; editable text, instances and vectors. Static prototypes only.",
+  "pendingRevision": "2026-10-24: dark mode, English, detailed chart, relative currency performance and Brazil indicators exist in local preview only; Figma Starter MCP call limit blocked updates."
 }

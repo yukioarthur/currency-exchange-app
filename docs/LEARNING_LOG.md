@@ -51,6 +51,20 @@ Próximo passo: etapa 03, configurar Vite e escrever a primeira interface JSX co
 
 ## Sequência do board
 
+### Revisão da etapa 02 — 24/10/2026
+
+Adicionados à proposta: claro/escuro/sistema, português/inglês, gráfico com estatísticas e inspeção, análise de moeda em relação a uma referência e cards de Ibovespa/meta Selic.
+
+**Internacionalização (i18n)** separa texto e lógica: `converter.convert` identifica uma mensagem, e o dicionário resolve o texto. **Localização** formata números e datas: 6,20 em português e 6.20 em inglês representam o mesmo número.
+
+**Tokens semânticos de tema** representam papéis: superfície, texto e destaque. Alteramos o valor desses tokens para trocar o tema, mantendo a mesma estrutura.
+
+**Variação percentual** relaciona o último valor ao primeiro: `(final / inicial - 1) × 100`. Uma moeda sempre varia em relação a outra; USD/BRL e BRL/USD não têm a mesma variação percentual.
+
+Validação: 98 chaves com paridade e parâmetros verificados; sintaxe do script conferida; navegador validou português/claro, inglês/escuro, persistência de tema/idioma após reload, escolha USD/BRL, visão percentual, mudança de período e inspeção por teclado. A responsividade desta revisão ainda precisa de inspeção em viewport mobile; APIs não foram testadas. O Figma não pôde ser atualizado por limite da integração Starter.
+
+Prévia de design e documentação completas em ENHANCEMENTS.md. O próximo passo continua sendo a etapa 03 (React/Vite), sem considerar a prévia uma implementação final.
+
 2. Protótipos e planejamento de interface no Figma.
 3. Vite e primeira interface estática com JSX.
 4. Refatoração em componentes.

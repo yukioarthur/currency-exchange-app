@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Currency Exchange — Design preview</title>
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div><p class="brand">CURRENCY EXCHANGE</p><h1 data-i18n="app.title"></h1><p data-i18n="app.subtitle"></p></div>
+      <div class="preferences">
+        <label><span data-i18n="settings.language"></span><select id="language"><option value="pt-BR">Português</option><option value="en-US">English</option></select></label>
+        <label><span data-i18n="settings.theme"></span><select id="theme"><option value="light" data-i18n="settings.light"></option><option value="dark" data-i18n="settings.dark"></option><option value="system" data-i18n="settings.system"></option></select></label>
+      </div>
+    </header>
+    <p class="notice" data-i18n="app.demo"></p>
+    <section aria-labelledby="converter-title">
+      <h2 id="converter-title" data-i18n="converter.title"></h2>
+      <div class="fields"><label><span data-i18n="converter.amount"></span><input value="100" readonly></label><label><span data-i18n="converter.from"></span><input value="EUR" readonly></label><label><span data-i18n="converter.to"></span><input value="BRL" readonly></label></div>
+      <div class="actions"><button disabled data-i18n="converter.convert"></button><button disabled data-i18n="converter.swap"></button></div>
+      <div class="result"><span>100 EUR =</span><strong id="conversion-result"></strong><span id="conversion-caption"></span></div>
+      <p class="muted" data-i18n="converter.preview"></p>
+    </section>
+    <section aria-labelledby="chart-title">
+      <h2 id="chart-title" data-i18n="chart.title"></h2>
+      <div class="actions" role="group" aria-labelledby="chart-title"><button id="pair-mode" aria-pressed="true" data-i18n="chart.pair"></button><button id="individual-mode" aria-pressed="false" data-i18n="chart.individual"></button></div>
+      <div class="fields"><label><span id="base-label"></span><select id="base"><option>EUR</option><option>USD</option><option>GBP</option><option>BRL</option></select></label><label><span id="quote-label"></span><select id="quote"><option>BRL</option><option>USD</option><option>EUR</option><option>GBP</option></select></label><label><span data-i18n="chart.period"></span><select id="period"><option value="7" data-i18n="period.7d"></option><option value="15" data-i18n="period.15d"></option><option value="30" data-i18n="period.30d"></option><option value="90" data-i18n="period.3m"></option><option value="180" data-i18n="period.6m"></option><option value="365" data-i18n="period.1y"></option><option value="1826" data-i18n="period.5y"></option><option value="3652" data-i18n="period.10y"></option></select></label></div>
+      <p class="muted" data-i18n="chart.referenceNote"></p>
+      <div class="chart-heading"><h3 id="pair-name"></h3><label class="inline"><input type="checkbox" id="indexed"><span data-i18n="chart.indexed"></span></label></div>
+      <div class="stats" id="stats"></div>
+      <p class="muted" id="chart-unit"></p>
+      <div id="chart" class="chart"></div>
+      <div class="inspection"><label for="point" data-i18n="chart.point"></label><input id="point" type="range" min="0" max="4" value="4"><output id="point-detail" aria-live="polite"></output></div>
+      <p class="muted" data-i18n="chart.daily"></p>
+    </section>
+    <section aria-labelledby="market-title">
+      <h2 id="market-title" data-i18n="market.title"></h2>
+      <div class="indicators">
+        <article><p data-i18n="market.ibov"></p><strong id="ibov-value"></strong><p id="ibov-change"></p><p class="muted" data-i18n="market.demoDate"></p><p class="muted" data-i18n="market.ibovSource"></p><span class="badge" data-i18n="market.pending"></span></article>
+        <article><p data-i18n="market.selic"></p><strong id="selic-value"></strong><p data-i18n="market.target"></p><p class="muted" data-i18n="market.demoDate"></p><p class="muted" data-i18n="market.bcb"></p><span class="badge" data-i18n="market.pending"></span></article>
+      </div>
+      <p class="muted" data-i18n="market.selicNote"></p>
+    </section>
+    <section aria-labelledby="records-title">
+      <h2 id="records-title" data-i18n="table.title"></h2>
+      <div class="fields"><label><span data-i18n="table.start"></span><input type="date" disabled></label><label><span data-i18n="table.end"></span><input type="date" disabled></label><label><span data-i18n="table.min"></span><input data-placeholder="common.noLimit" disabled></label><label><span data-i18n="table.max"></span><input data-placeholder="common.noLimit" disabled></label></div>
+      <div class="actions"><button disabled data-i18n="table.clear"></button><label><span data-i18n="table.sort"></span><select disabled><option data-i18n="table.dateAsc"></option><option data-i18n="table.dateDesc"></option><option data-i18n="table.rateAsc"></option><option data-i18n="table.rateDesc"></option></select></label></div>
+      <p id="record-count"></p><div class="table-wrap"><table><thead><tr><th data-i18n="table.date"></th><th data-i18n="table.base"></th><th data-i18n="table.quote"></th><th data-i18n="table.rate"></th></tr></thead><tbody id="records"></tbody></table></div>
+      <button disabled data-i18n="table.export"></button><p class="muted" data-i18n="table.preview"></p>
+    </section>
+  </main>
+  <script type="module" src="preview.js"></script>
+</body>
+</html>

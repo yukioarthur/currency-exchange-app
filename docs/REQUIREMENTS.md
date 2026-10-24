@@ -69,7 +69,7 @@ Estas escolhas explicitam lacunas do enunciado e podem ser revistas com o aluno 
 - RN13: trocar o par ou o período limpa os filtros da tabela. A ordenação inicial será por data crescente.
 - RN14: os filtros afetam tabela, contador e CSV. O gráfico continua mostrando o histórico completo do período escolhido.
 - RN15: manter a precisão da taxa nos cálculos; arredondar apenas na apresentação. Definir formatação monetária por moeda na etapa de funções.
-- RN16: interface inicial em português do Brasil. Formato e separador do CSV serão definidos e documentados na etapa de exportação.
+- RN16: interface padrão em português do Brasil, com opção de inglês americano conforme revisão de 24/10/2026. Formato e separador do CSV serão definidos e documentados na etapa de exportação.
 
 ## 6. Cenários de aceite para lembrar
 
@@ -92,3 +92,16 @@ Até 27/10/2026: repositório público; aplicação executável; README; docs/RE
 ## 9. Situação da validação
 
 Este documento foi conferido contra o enunciado lido no Notion. Os critérios acima são verificações futuras, não testes já executados. A implementação e a validação funcional ainda não começaram.
+
+## 10. Extensões solicitadas em 24/10/2026
+
+| ID | Extensão | Critério de aceite |
+| --- | --- | --- |
+| EX01 | Temas claro, escuro e sistema | Persistir escolha; manter contraste e foco; não alterar os dados. |
+| EX02 | Português/inglês | Traduzir interface e mensagens, localizar datas/números, preservar moeda e valores. |
+| EX03 | Gráfico detalhado | Eixos/unidades, inspeção dos pontos, mínima/máxima/média e variação, com dados coerentes com a tabela. |
+| EX04 | Análise individual relativa | Escolher moeda e referência distintas; alternar nominal/percentual; identificar claramente o par. |
+| EX05 | Meta Selic | Valor em % a.a., data e fonte SGS 432; erros isolados. |
+| EX06 | Ibovespa | Pontos, variação diária disponível, data/hora e fornecedor validado; sem substituir por ETF. |
+
+Detalhamento, dependências e limites: [ENHANCEMENTS.md](ENHANCEMENTS.md). Os extras não substituem os requisitos do Notion. A integração do Ibovespa depende de validação do fornecedor e eventual decisão de arquitetura se exigir chave privada.

@@ -26,6 +26,10 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 - [Registro do uso de IA](docs/AI_USAGE.md)
 - [Protótipos e evidências do Figma](docs/FIGMA.md)
 - [Mapa inicial de componentes](docs/COMPONENTS.md)
+- [Revisão: tema, inglês, análise e indicadores](docs/ENHANCEMENTS.md)
+- [Integração das traduções](src/i18n/README.md)
+
+Prévia de design revisada: executar `node scripts/preview.cjs` e abrir `http://127.0.0.1:4173`. Usa dados fictícios; não é a SPA final. O Figma ainda não contém esta revisão devido ao limite da integração.
 
 Os documentos de testes de API e funções serão adicionados nas respectivas etapas. O repositório público no GitHub ainda não foi criado.
 

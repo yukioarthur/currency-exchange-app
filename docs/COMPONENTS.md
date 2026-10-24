@@ -49,3 +49,11 @@ FeedbackMessage: usado nas regiões de consulta e resultados.
 **Separação de responsabilidades:** componentes desenham a interface; services consultam a API; utils fazem cálculos e transformações; hooks coordenam lógica reutilizável de estado/efeitos. Essas pastas serão criadas quando necessárias, nas etapas do board.
 
 Nenhum destes estados, hooks ou contratos de props foi implementado ou testado nesta etapa. O mapa pode ser ajustado durante a construção.
+
+## Revisão de 24/10/2026
+
+Planejar `Preferences` (locale, theme, onLocaleChange, onThemeChange), `CurrencyPerformance` (moeda analisada, referência e modo nominal/percentual) e `MarketIndicators` (cards independentes para Ibovespa e meta Selic). Cada componente terá JSX e CSS Module próprios na etapa de extração.
+
+Idioma/tema ficam no ancestral comum. O histórico passa a possuir um par de análise identificado separadamente do conversor. `HistoryChart`, estatísticas e `HistoryExplorer` recebem a mesma série desse par. Indicadores têm estados independentes, evitando que uma falha externa derrube a consulta de câmbio.
+
+Os arquivos `src/i18n/pt-BR.json` e `en-US.json` já existem. Componentes React, providers e hooks continuam planejados; somente a prévia de design usa os dicionários neste momento.
