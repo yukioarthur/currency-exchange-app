@@ -35,7 +35,21 @@ O Weather App apresenta uma necessidade de consulta externa e tratamento de load
 
 Explique com suas palavras: se a tabela mostra 8 registros após os filtros, mas o CSV exporta os 30 registros originais, qual requisito foi descumprido e como você testaria a correção?
 
-## Próximas etapas — ordem do board
+## Etapa 02 — Protótipos e componentes — 23/10/2026
+
+Criados no Figma: wireframes desktop/mobile, média fidelidade desktop/mobile e painéis de estados nas duas larguras. Evidências em docs/images; detalhes em FIGMA.md; responsabilidades previstas em COMPONENTS.md.
+
+Conceitos: wireframe é estrutura; fidelidade é nível de detalhe; responsividade é reorganização; componente é uma unidade com responsabilidade. Os controles reutilizados no Figma antecipam a ideia de reutilização que aplicaremos em React.
+
+Verificação: seis imagens revisadas, contraste corrigido, layout sem sobreposição observada e fonte Inter confirmada. Os protótipos são estáticos; não foram executados testes da aplicação.
+
+Resposta ao exercício anterior: exportar 30 registros quando a tabela filtrada apresenta 8 viola RF12. A correção será verificada comparando as linhas da tabela e do CSV. Tabela e exportador devem consumir a mesma lista derivada.
+
+Para lembrar: **estrutura primeiro; aparência depois; comportamento em cada estado**.
+
+Próximo passo: etapa 03, configurar Vite e escrever a primeira interface JSX com dados fictícios. Props, estado e API serão introduzidos nas etapas correspondentes.
+
+## Sequência do board
 
 2. Protótipos e planejamento de interface no Figma.
 3. Vite e primeira interface estática com JSX.

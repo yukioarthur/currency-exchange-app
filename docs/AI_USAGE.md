@@ -11,3 +11,11 @@
 - **Participação do aluno:** forneceu o enunciado e as referências, decidiu iniciar do zero e solicitou acompanhamento incremental. A revisão das decisões propostas e o exercício de compreensão estão pendentes.
 
 Atualizar este registro a cada etapa assistida. Não atribuir ao aluno uma revisão, implementação ou teste que ele ainda não realizou.
+
+## 23/10/2026 — Etapa 02: protótipos e arquitetura prevista
+
+- **Solicitação:** continuar para a próxima etapa do board.
+- **Contribuição da IA:** criação de arquivo Figma com seis composições editáveis; uso de controles da biblioteca Simple Design System; proposta de cores e fonte; revisão visual e correções; exportação de seis imagens; FIGMA.md e COMPONENTS.md; atualização do README e do registro de aprendizagem.
+- **Verificação realizada pela IA:** inspeção visual das seis composições, fonte Inter, presença de textos, instâncias e vetores editáveis. Não houve testes de aplicação ou API.
+- **Limitações:** protótipos estáticos, sem interações configuradas; dados fictícios. O aluno ainda não confirmou a aparência ou o mapa de componentes.
+- **Versionamento:** commit documental desta etapa; o arquivo editável permanece no Figma e suas evidências PNG ficam no Git.

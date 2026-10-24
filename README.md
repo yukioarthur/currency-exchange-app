@@ -4,7 +4,7 @@ Projeto individual de aprendizagem: uma Single Page Application em React para co
 
 ## Estado atual
 
-Etapa 01 — planejamento e requisitos. Ainda não existe aplicação executável nem configuração do Vite. Os comandos de instalação e execução serão documentados quando a implementação começar.
+Etapas 01 e 02 — requisitos, protótipos visuais no Figma e planejamento dos componentes. Ainda não existe aplicação executável nem configuração do Vite. Os comandos de instalação e execução serão documentados quando a implementação começar.
 
 Entrega prevista: **27/10/2026**.
 
@@ -24,8 +24,10 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 - [Requisitos e critérios de aceite](docs/REQUIREMENTS.md)
 - [Roteiro e registro de aprendizagem](docs/LEARNING_LOG.md)
 - [Registro do uso de IA](docs/AI_USAGE.md)
+- [Protótipos e evidências do Figma](docs/FIGMA.md)
+- [Mapa inicial de componentes](docs/COMPONENTS.md)
 
-Os documentos de componentes, Figma, testes de API e testes de funções serão adicionados nas respectivas etapas. O repositório público no GitHub ainda não foi criado.
+Os documentos de testes de API e funções serão adicionados nas respectivas etapas. O repositório público no GitHub ainda não foi criado.
 
 ## Processo
 

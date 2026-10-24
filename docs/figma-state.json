@@ -1,0 +1,16 @@
+{
+  "fileKey": "rgsHk6WPseuvUMbXtuAd2z",
+  "sessionId": "0566fbab-876f-4985-9394-ce2d0dea1e38",
+  "pageId": "0:1",
+  "scope": "stage-02-prototypes",
+  "screens": {
+    "wireframeDesktop": "2:313",
+    "wireframeMobile": "2:476",
+    "prototypeDesktop": "2:636",
+    "prototypeMobile": "2:798",
+    "statesDesktop": "2:960",
+    "statesMobile": "3:278"
+  },
+  "collectionId": "VariableCollectionId:2:287",
+  "validation": "Six compositions visually checked; Inter; editable text, instances and vectors. Static prototypes only."
+}
