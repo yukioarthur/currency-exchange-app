@@ -4,7 +4,7 @@ Projeto individual de aprendizagem: uma Single Page Application em React para co
 
 ## Estado atual
 
-Etapa 06 — conversão simulada, validações, escolhas da análise, tema e idioma ativados com eventos e useState. Dados inteiramente fictícios, com períodos fixos até 22/10/2026; sem API. Preferências voltam ao padrão ao recarregar. Filtros e CSV continuam pendentes. Aguardando teste e commit pelo aluno.
+Etapa 06 — conversão simulada, validações, escolhas da análise, tema e idioma ativados com eventos e useState. Dados inteiramente fictícios, com períodos fixos até 22/10/2026; sem API. Preferências voltam ao padrão ao recarregar. Filtros e CSV continuam pendentes. Etapa 07: investigação HTTP documentada; Collection preparada e aguardando execução no Postman pelo aluno.
 
 ## Executar a aplicação
 
@@ -47,6 +47,8 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 - [Guia da etapa 05: Props e listas](docs/STAGE_05.md)
 - [Guia da etapa 06: Eventos e estado](docs/STAGE_06.md)
 - [Registro do uso de IA](docs/AI_USAGE.md)
+- [Investigação da API e roteiro Postman](docs/API_TESTS.md)
+- [Collection Postman](postman/Frankfurter.postman_collection.json)
 - [Protótipos e evidências do Figma](docs/FIGMA.md)
 - [Mapa inicial de componentes](docs/COMPONENTS.md)
 - [Revisão: tema, inglês, análise e indicadores](docs/ENHANCEMENTS.md)
@@ -54,7 +56,7 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 
 Prévia de design revisada: executar `node scripts/preview.cjs` e abrir `http://127.0.0.1:4173`. Usa dados fictícios; não é a SPA final. O Figma ainda não contém esta revisão devido ao limite da integração.
 
-Os documentos de testes de API e funções serão adicionados nas respectivas etapas. O remoto está configurado em https://github.com/yukioarthur/currency-exchange-app. A publicação da aplicação no GitHub Pages ainda está pendente.
+A investigação da API está em API_TESTS.md; testes de funções serão adicionados na etapa correspondente. O remoto está configurado em https://github.com/yukioarthur/currency-exchange-app. A publicação da aplicação no GitHub Pages ainda está pendente.
 
 ## Processo
 

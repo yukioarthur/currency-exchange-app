@@ -1,0 +1,278 @@
+{
+  "info": {
+    "name": "Currency Exchange - Etapa 07 - Frankfurter v2",
+    "description": "Nove consultas públicas e testes de contrato. Sem chave de API. Executar uma iteração. Erros HTTP deliberados nos casos 07 e 09 devem passar seus testes. Frontend ainda usa demonstração.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.frankfurter.dev/v2",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 - Moedas disponíveis",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/currencies",
+        "description": "Investigação da etapa 07. Datas históricas fixas para repetibilidade. A cotação atual varia. Resposta capturada em 2026-10-26T15:48:00.100Z."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('Status HTTP esperado', () => check(pm.response.code === 200, 'Status inesperado: ' + pm.response.code));",
+              "const data = pm.response.json();",
+              "pm.test('Lista de moedas com códigos únicos e EUR/BRL', () => { check(Array.isArray(data) && data.length > 0, 'Lista vazia ou inválida'); data.forEach(c => check(typeof c.iso_code === 'string' && typeof c.name === 'string', 'Campos inválidos')); const codes = data.map(c => c.iso_code); check(new Set(codes).size === codes.length, 'Códigos duplicados'); check(codes.includes('EUR') && codes.includes('BRL'), 'Par não suportado'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 - Cotação atual EUR/BRL",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/rate/EUR/BRL",
+        "description": "Investigação da etapa 07. Datas históricas fixas para repetibilidade. A cotação atual varia. Resposta capturada em 2026-10-26T15:48:00.603Z."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('Status HTTP esperado', () => check(pm.response.code === 200, 'Status inesperado: ' + pm.response.code));",
+              "const data = pm.response.json();",
+              "function validRate(row) { check(row.base === 'EUR' && row.quote === 'BRL', 'Par incorreto'); check(Number.isFinite(row.rate) && row.rate > 0, 'Taxa inválida'); check(typeof row.date === 'string' && /^\\d{4}-\\d{2}-\\d{2}$/.test(row.date), 'Data inválida'); }",
+              "pm.test('Cotação válida', () => validRate(data));",
+              "pm.test('Conversão de exemplo: multiplicar valor pela taxa', () => check(Number.isFinite(100 * data.rate), 'Resultado não finito'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 - Cotação em data específica",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/rate/EUR/BRL?date=2024-01-05",
+        "description": "Investigação da etapa 07. Datas históricas fixas para repetibilidade. A cotação atual varia. Resposta capturada em 2026-10-26T15:48:01.105Z."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('Status HTTP esperado', () => check(pm.response.code === 200, 'Status inesperado: ' + pm.response.code));",
+              "const data = pm.response.json();",
+              "function validRate(row) { check(row.base === 'EUR' && row.quote === 'BRL', 'Par incorreto'); check(Number.isFinite(row.rate) && row.rate > 0, 'Taxa inválida'); check(typeof row.date === 'string' && /^\\d{4}-\\d{2}-\\d{2}$/.test(row.date), 'Data inválida'); }",
+              "pm.test('Cotação válida', () => validRate(data));",
+              "pm.test('Data efetiva não posterior à solicitada', () => check(data.date <= '2024-01-05', 'Data posterior ao pedido'));",
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 - Domingo: observar data retornada",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/rate/EUR/BRL?date=2024-01-07",
+        "description": "Investigação da etapa 07. Datas históricas fixas para repetibilidade. A cotação atual varia. Resposta capturada em 2026-10-26T15:48:01.590Z."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('Status HTTP esperado', () => check(pm.response.code === 200, 'Status inesperado: ' + pm.response.code));",
+              "const data = pm.response.json();",
+              "function validRate(row) { check(row.base === 'EUR' && row.quote === 'BRL', 'Par incorreto'); check(Number.isFinite(row.rate) && row.rate > 0, 'Taxa inválida'); check(typeof row.date === 'string' && /^\\d{4}-\\d{2}-\\d{2}$/.test(row.date), 'Data inválida'); }",
+              "pm.test('Cotação válida', () => validRate(data));",
+              "pm.test('Data efetiva não posterior à solicitada', () => check(data.date <= '2024-01-07', 'Data posterior ao pedido'));",
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 - Histórico de uma semana",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/rates?base=EUR&quotes=BRL&from=2024-01-01&to=2024-01-07",
+        "description": "Investigação da etapa 07. Datas históricas fixas para repetibilidade. A cotação atual varia. Resposta capturada em 2026-10-26T15:48:02.109Z."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('Status HTTP esperado', () => check(pm.response.code === 200, 'Status inesperado: ' + pm.response.code));",
+              "const data = pm.response.json();",
+              "function validRate(row) { check(row.base === 'EUR' && row.quote === 'BRL', 'Par incorreto'); check(Number.isFinite(row.rate) && row.rate > 0, 'Taxa inválida'); check(typeof row.date === 'string' && /^\\d{4}-\\d{2}-\\d{2}$/.test(row.date), 'Data inválida'); }",
+              "pm.test('Série com taxas válidas, datas únicas, ordenadas e no intervalo', () => { check(Array.isArray(data) && data.length > 0, 'Série vazia'); data.forEach((row,i) => { validRate(row); check(row.date >= '2024-01-01' && row.date <= '2024-01-07', 'Data fora do intervalo'); if(i) check(row.date > data[i-1].date, 'Datas repetidas ou fora de ordem'); }); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "06 - Histórico de dez anos",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/rates?base=EUR&quotes=BRL&from=2016-10-26&to=2026-10-26",
+        "description": "Investigação da etapa 07. Datas históricas fixas para repetibilidade. A cotação atual varia. Resposta capturada em 2026-10-26T15:48:12.190Z."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('Status HTTP esperado', () => check(pm.response.code === 200, 'Status inesperado: ' + pm.response.code));",
+              "const data = pm.response.json();",
+              "function validRate(row) { check(row.base === 'EUR' && row.quote === 'BRL', 'Par incorreto'); check(Number.isFinite(row.rate) && row.rate > 0, 'Taxa inválida'); check(typeof row.date === 'string' && /^\\d{4}-\\d{2}-\\d{2}$/.test(row.date), 'Data inválida'); }",
+              "pm.test('Série com taxas válidas, datas únicas, ordenadas e no intervalo', () => { check(Array.isArray(data) && data.length > 0, 'Série vazia'); data.forEach((row,i) => { validRate(row); check(row.date >= '2016-10-26' && row.date <= '2026-10-26', 'Data fora do intervalo'); if(i) check(row.date > data[i-1].date, 'Datas repetidas ou fora de ordem'); }); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "07 - Moeda inválida",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/rate/ABC/BRL",
+        "description": "Investigação da etapa 07. Datas históricas fixas para repetibilidade. A cotação atual varia. Resposta capturada em 2026-10-26T15:48:12.868Z."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('Status HTTP esperado', () => check(pm.response.code === 422, 'Status inesperado: ' + pm.response.code));",
+              "const data = pm.response.json();",
+              "pm.test('Erro em JSON com status e mensagem', () => { check(data.status === pm.response.code, 'Status do corpo divergente'); check(typeof data.message === 'string' && data.message.length > 0, 'Mensagem ausente'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "08 - Intervalo invertido",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/rates?base=EUR&quotes=BRL&from=2024-01-07&to=2024-01-01",
+        "description": "Investigação da etapa 07. Datas históricas fixas para repetibilidade. A cotação atual varia. Resposta capturada em 2026-10-26T15:48:13.338Z."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('Status HTTP esperado', () => check(pm.response.code === 200, 'Status inesperado: ' + pm.response.code));",
+              "const data = pm.response.json();",
+              "pm.test('Comportamento observado: lista vazia', () => check(Array.isArray(data) && data.length === 0, 'Comportamento da API mudou'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "09 - Data anterior à cobertura",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/rate/EUR/BRL?date=1900-01-01",
+        "description": "Investigação da etapa 07. Datas históricas fixas para repetibilidade. A cotação atual varia. Resposta capturada em 2026-10-26T15:48:13.828Z."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('Status HTTP esperado', () => check(pm.response.code === 404, 'Status inesperado: ' + pm.response.code));",
+              "const data = pm.response.json();",
+              "pm.test('Erro em JSON com status e mensagem', () => { check(data.status === pm.response.code, 'Status do corpo divergente'); check(typeof data.message === 'string' && data.message.length > 0, 'Mensagem ausente'); });"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

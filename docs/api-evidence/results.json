@@ -1,0 +1,144 @@
+[
+  {
+    "name": "currencies",
+    "url": "https://api.frankfurter.dev/v2/currencies",
+    "testedAt": "2026-10-26T15:48:00.100Z",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "allowOrigin": "*",
+    "count": 170,
+    "first": {
+      "iso_code": "AED",
+      "iso_numeric": "784",
+      "name": "United Arab Emirates Dirham",
+      "symbol": "د.إ",
+      "start_date": "1996-04-11",
+      "end_date": "2026-10-26"
+    },
+    "last": {
+      "iso_code": "ZWG",
+      "iso_numeric": "924",
+      "name": "Zimbabwe Gold",
+      "symbol": "ZiG",
+      "start_date": "2024-09-02",
+      "end_date": "2026-10-23"
+    }
+  },
+  {
+    "name": "latest",
+    "url": "https://api.frankfurter.dev/v2/rate/EUR/BRL",
+    "testedAt": "2026-10-26T15:48:00.603Z",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "allowOrigin": "*",
+    "first": {
+      "date": "2026-10-26",
+      "base": "EUR",
+      "quote": "BRL",
+      "rate": 5.6286
+    }
+  },
+  {
+    "name": "historical",
+    "url": "https://api.frankfurter.dev/v2/rate/EUR/BRL?date=2024-01-05",
+    "testedAt": "2026-10-26T15:48:01.105Z",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "allowOrigin": "*",
+    "first": {
+      "date": "2024-01-05",
+      "base": "EUR",
+      "quote": "BRL",
+      "rate": 5.3616
+    }
+  },
+  {
+    "name": "weekend",
+    "url": "https://api.frankfurter.dev/v2/rate/EUR/BRL?date=2024-01-07",
+    "testedAt": "2026-10-26T15:48:01.590Z",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "allowOrigin": "*",
+    "first": {
+      "date": "2024-01-07",
+      "base": "EUR",
+      "quote": "BRL",
+      "rate": 5.358
+    }
+  },
+  {
+    "name": "series",
+    "url": "https://api.frankfurter.dev/v2/rates?base=EUR&quotes=BRL&from=2024-01-01&to=2024-01-07",
+    "testedAt": "2026-10-26T15:48:02.109Z",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "allowOrigin": "*",
+    "count": 7,
+    "first": {
+      "date": "2024-01-01",
+      "base": "EUR",
+      "quote": "BRL",
+      "rate": 5.3681
+    },
+    "last": {
+      "date": "2024-01-07",
+      "base": "EUR",
+      "quote": "BRL",
+      "rate": 5.358
+    }
+  },
+  {
+    "name": "ten-years",
+    "url": "https://api.frankfurter.dev/v2/rates?base=EUR&quotes=BRL&from=2016-10-26&to=2026-10-26",
+    "testedAt": "2026-10-26T15:48:12.190Z",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "allowOrigin": "*",
+    "count": 3653,
+    "first": {
+      "date": "2016-10-26",
+      "base": "EUR",
+      "quote": "BRL",
+      "rate": 3.4054
+    },
+    "last": {
+      "date": "2026-10-26",
+      "base": "EUR",
+      "quote": "BRL",
+      "rate": 5.6286
+    }
+  },
+  {
+    "name": "invalid-currency",
+    "url": "https://api.frankfurter.dev/v2/rate/ABC/BRL",
+    "testedAt": "2026-10-26T15:48:12.868Z",
+    "status": 422,
+    "contentType": "application/json; charset=utf-8",
+    "allowOrigin": "*",
+    "first": {
+      "status": 422,
+      "message": "invalid currency: ABC"
+    }
+  },
+  {
+    "name": "invalid-range",
+    "url": "https://api.frankfurter.dev/v2/rates?base=EUR&quotes=BRL&from=2024-01-07&to=2024-01-01",
+    "testedAt": "2026-10-26T15:48:13.338Z",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "allowOrigin": "*",
+    "count": 0
+  },
+  {
+    "name": "before-coverage",
+    "url": "https://api.frankfurter.dev/v2/rate/EUR/BRL?date=1900-01-01",
+    "testedAt": "2026-10-26T15:48:13.828Z",
+    "status": 404,
+    "contentType": "application/json; charset=utf-8",
+    "allowOrigin": "*",
+    "first": {
+      "status": 404,
+      "message": "not found"
+    }
+  }
+]

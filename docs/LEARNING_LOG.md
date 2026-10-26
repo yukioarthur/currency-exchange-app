@@ -106,3 +106,7 @@ Dados fictícios centralizados em src/data/demo.js. App passa props ao conversor
 Ativados campos controlados, submissão/Enter, validações, inversão, par/período da análise, escala percentual, idioma e tema. useState guarda preferências e análise em App; o conversor guarda suas entradas/resultado localmente. Gráfico e tabela recebem rows derivado das escolhas compartilhadas. Demonstração sem API, com limites de períodos fixos até 22/10/2026. Guia em STAGE_06.md.
 
 Build e 106 mensagens consistentes; testes no navegador de conversão, erros, zero, inversão, Enter, idioma/tema e histórico de 10 anos aprovados. Tema/idioma não persistem após reload. Nenhum commit/push executado pela IA.
+
+## 26/10/2026 — Etapa 07 (aguardando execução do aluno no Postman)
+
+Nove consultas reais à Frankfurter v2, respostas/metadados em api-evidence, Collection v2.1 e 21 verificações aprovadas contra respostas salvas. Conceitos: GET, endpoint, parâmetros, JSON, status HTTP, contrato e testes de resposta. Detalhes em API_TESTS.md. Descobertas: currencies usa iso_code; histórico EUR/BRL inclui domingo; intervalo invertido retorna 200 vazio. React permanece na demonstração da etapa 06. Aluno deve importar e executar Collection, depois registrar commit/push.

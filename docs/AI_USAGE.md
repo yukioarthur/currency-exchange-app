@@ -48,3 +48,7 @@ A IA implementou props, CurrencySelect reutilizável, dados fictícios centraliz
 ## 26/10/2026 — Etapa 06
 
 IA implementou eventos/useState e compartilhamento de escolhas via App, tradução completa da tela React e cores de tema. Taxas/curvas inventadas e limites de período fixos servem apenas ao exercício. Verificações: build, paridade de 106 mensagens e navegador (conversão, vazio/negativo/zero, moedas iguais, troca, Enter, inglês/escuro, par/período/percentual). Sem erros/avisos de console capturados. Sem API ou persistência. Aluno fará sua revisão e executará commit/push.
+
+## 26/10/2026 — Etapa 07
+
+IA consultou documentação Frankfurter/Postman, executou nove requisições públicas via Node fetch, salvou respostas e preparou Collection com 21 verificações. Executou os scripts da Collection sobre evidências salvas em Node, sem runtime/interface do Postman. Execução no Postman pelo aluno permanece pendente. Não integrou API na tela nem executou commit/push.
