@@ -49,3 +49,6 @@ td:last-child, th:last-child { text-align: right; font-variant-numeric: tabular-
 button:not(:disabled), select:not(:disabled) { cursor: pointer; }
 button[aria-pressed="true"] { background: var(--soft); border-color: var(--accent); }
 :focus-visible { outline-color: var(--focus, #a34a00); }
+
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+fieldset:disabled { opacity: 1; }

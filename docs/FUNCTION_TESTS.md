@@ -40,3 +40,7 @@ Execute npm test e leia o nome de cada caso. Compare o resultado esperado de per
 Depois execute npm run build e confira a conversão de 100 EUR em R$ 620,00 fictícios no aplicativo. Tente vazio, negativo e zero para verificar que o comportamento foi preservado.
 
 A execução no Postman da etapa 07 continua sem evidência local; seus 21 testes sobre respostas salvas passaram novamente. Nenhum commit/push foi executado pela IA nesta etapa. Aguardando aprovação do aluno.
+
+## Etapa 09 — Contratos do serviço
+
+tests/services.test.js adiciona 7 testes com respostas simuladas: mapeamento de moedas, moedas inválidas, cotação/URL, histórico ordenado/vazio, dados inválidos, validações antes da rede e erros HTTP/rede/timeout/JSON. Total atual: 18 testes aprovados. As funções de conversão agora são usadas também com a cotação real recebida.

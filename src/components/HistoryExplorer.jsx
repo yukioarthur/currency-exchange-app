@@ -1,6 +1,6 @@
 import styles from './HistoryExplorer.module.css';
 import shared from './Shared.module.css';
-export default function HistoryExplorer({ rows, base, quote, ui }) {
+export default function HistoryExplorer({ rows, base, quote, status, ui }) {
   return (
     <section className={shared.card} aria-labelledby="records-title">
       <h2 id="records-title">{ui.t('table.title')}</h2>
@@ -10,9 +10,10 @@ export default function HistoryExplorer({ rows, base, quote, ui }) {
       </div>
       <div className={shared.actions}><button disabled>{ui.t('table.clear')}</button><label>{ui.t('table.sort')}<select disabled><option>{ui.t('table.dateAsc')}</option><option>{ui.t('table.dateDesc')}</option><option>{ui.t('table.rateAsc')}</option><option>{ui.t('table.rateDesc')}</option></select></label></div>
       <p>{ui.t('table.count', { count: rows.length })}</p>
+      {status === 'empty' && <p role="status">{ui.t('status.empty')}</p>}
       <div className={styles.tableWrap} tabIndex={0} role="region" aria-label={ui.t('table.title')}>
         <table>
-          <caption>{base} / {quote} · {ui.t('common.sample')}</caption>
+          <caption>{base} / {quote} · {ui.t('api.source')}</caption>
           <thead><tr><th scope="col">{ui.t('table.date')}</th><th scope="col">{ui.t('table.base')}</th><th scope="col">{ui.t('table.quote')}</th><th scope="col">{ui.t('table.rate')}</th></tr></thead>
           <tbody>{rows.map((row) => <tr key={row.date}><td>{ui.date(row.date)}</td><td>{base}</td><td>{quote}</td><td>{ui.number(row.rate)}</td></tr>)}</tbody>
         </table>

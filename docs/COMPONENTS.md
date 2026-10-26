@@ -73,3 +73,7 @@ CurrencySelect implementado com label, currencies, selected. CurrencyConverter r
 ## Estado após etapa 06
 
 App possui locale, theme e analysis via useState; deriva rows e compartilha ui (tradução/formatação). AppHeader recebe escolhas e callbacks. CurrencyConverter guarda entradas/par/resultado/erro; usa taxas fictícias e não altera análise. CurrencySelect recebe onChange. HistoryPanel chama onChange(field,value), recebe analysis; HistoryChart recebe indexed/ui. HistoryExplorer e MarketIndicators recebem ui. Sem efeitos, hooks próprios ou serviços. Contratos iniciais acima são planejamento, estes descrevem a implementação atual.
+
+## Estado após etapa 09
+
+App guarda currencies/currencyStatus/currencyError e historyState (status, rows, error, range). HistoryPanel recebe requestState/onLoad. CurrencyConverter consulta getRate e usa loading para bloquear edição durante a requisição. CurrencySelect usa ui.currencyName com Intl.DisplayNames e fallback; HistoryExplorer recebe status. Serviço separado das funções puras e da UI; nenhuma chamada automática/useEffect ainda.

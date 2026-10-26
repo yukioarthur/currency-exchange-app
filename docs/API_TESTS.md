@@ -68,3 +68,7 @@ Scripts > Post-response contém as verificações. Cada pm.test define uma condi
 ## Pendências
 
 Execução no Postman pelo aluno; teste real de navegador na integração; outros pares e falhas de rede; endpoints BCB/Ibovespa fora desta etapa. Nenhum commit/push executado pela IA.
+
+## Integração etapa 09
+
+Serviço em src/services/frankfurter.js implementado; resposta validada antes de entrar na interface. Teste real via navegador confirmou moedas, conversão e histórico em 26/10/2026. Consulte STAGE_09.md. A execução da Collection dentro do Postman segue sem captura/relatório local; não confundir com esta verificação de integração.

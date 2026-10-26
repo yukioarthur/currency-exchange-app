@@ -4,7 +4,7 @@ Projeto individual de aprendizagem: uma Single Page Application em React para co
 
 ## Estado atual
 
-Etapa 06 — conversão simulada, validações, escolhas da análise, tema e idioma ativados com eventos e useState. Dados inteiramente fictícios, com períodos fixos até 22/10/2026; sem API. Preferências voltam ao padrão ao recarregar. Filtros e CSV continuam pendentes. Etapa 08: funções de negócio extraídas e 11 testes automatizados aprovados, aguardando revisão do aluno. Execução no Postman ainda sem evidência local.
+Etapa 09 — câmbio real pela Frankfurter: carregamento de moedas, conversão e histórico por botões. Requer internet. Tema/idioma ativos; indicadores brasileiros ainda fictícios. Filtros, CSV, efeitos e publicação continuam pendentes. Aguardando teste e commit do aluno.
 
 ## Executar a aplicação
 
@@ -49,6 +49,7 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 - [Registro do uso de IA](docs/AI_USAGE.md)
 - [Investigação da API e roteiro Postman](docs/API_TESTS.md)
 - [Etapa 08: funções e testes](docs/FUNCTION_TESTS.md)
+- [Etapa 09: integração com a API](docs/STAGE_09.md)
 - [Collection Postman](postman/Frankfurter.postman_collection.json)
 - [Protótipos e evidências do Figma](docs/FIGMA.md)
 - [Mapa inicial de componentes](docs/COMPONENTS.md)

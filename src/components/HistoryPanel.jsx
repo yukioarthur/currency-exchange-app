@@ -4,7 +4,7 @@ import styles from './HistoryPanel.module.css';
 import shared from './Shared.module.css';
 import HistoryChart from './HistoryChart.jsx';
 
-export default function HistoryPanel({ currencies, periods, rows, analysis, onChange, ui }) {
+export default function HistoryPanel({ currencies, periods, rows, analysis, onChange, onLoad, requestState, ui }) {
   const { base, quote, period, indexed } = analysis;
   const rates = rows.map((row) => row.rate);
   const minimum = rates.length ? Math.min(...rates) : null;
@@ -15,6 +15,7 @@ export default function HistoryPanel({ currencies, periods, rows, analysis, onCh
   return (
     <section className={shared.card} aria-labelledby="history-title">
       <h2 id="history-title">{ui.t('chart.title')}</h2>
+      <fieldset disabled={!currencies.length || requestState.status === 'loading'}>
       <div className={shared.actions}>
         <button aria-pressed={!indexed} onClick={() => onChange('indexed', false)}>{ui.t('chart.pair')}</button>
         <button aria-pressed={indexed} onClick={() => onChange('indexed', true)}>{ui.t('chart.individual')}</button>
@@ -26,8 +27,13 @@ export default function HistoryPanel({ currencies, periods, rows, analysis, onCh
           {periods.map((item) => <option key={item.id} value={item.id}>{ui.t('period.' + item.id)}</option>)}
         </select></label>
       </div>
+      <button onClick={onLoad}>{ui.t(requestState.status === 'loading' ? 'status.loading' : 'api.loadHistory')}</button>
+      </fieldset>
+      <p role="status">{requestState.status === 'idle' ? ui.t('api.historyPrompt') : requestState.status === 'loading' ? ui.t('status.loading') : requestState.status === 'empty' ? ui.t('chart.noData') : ''}</p>
+      {requestState.error && <p role="alert">{ui.t(requestState.error)}</p>}
+      {requestState.range && <p className={shared.muted}>{ui.t('api.interval')}: {ui.date(requestState.range.from)} – {ui.date(requestState.range.to)}</p>}
       <p className={shared.muted}>{ui.t('chart.referenceNote')}</p>
-      <div className={styles.chartHeading}><h3>{base} / {quote}</h3><label className={styles.inline}><input type="checkbox" checked={indexed} onChange={(event) => onChange('indexed', event.target.checked)} />{ui.t('chart.indexed')}</label></div>
+      <div className={styles.chartHeading}><h3>{base} / {quote}</h3><label className={styles.inline}><input type="checkbox" disabled={requestState.status === 'loading'} checked={indexed} onChange={(event) => onChange('indexed', event.target.checked)} />{ui.t('chart.indexed')}</label></div>
       <div className={styles.stats}>
         <div><span>{ui.t('chart.change')}</span><strong>{change === null ? '—' : (change > 0 ? '+' : '') + ui.number(change, 2) + '%'}</strong></div>
         <div><span>{ui.t('chart.minimum')}</span><strong>{formatRate(minimum)}</strong></div>
@@ -35,8 +41,8 @@ export default function HistoryPanel({ currencies, periods, rows, analysis, onCh
         <div><span>{ui.t('chart.average')}</span><strong>{formatRate(average)}</strong></div>
       </div>
       <p className={shared.muted}>{indexed ? ui.t('chart.percent') : ui.t('chart.unit', { base, quote })} · {ui.t('chart.observations', { count: rows.length })}</p>
-      <HistoryChart rows={rows} base={base} quote={quote} indexed={indexed} ui={ui} />
-      <p className={shared.muted}>{ui.t('chart.demo')}</p>
+      {rows.length > 0 && <HistoryChart rows={rows} base={base} quote={quote} indexed={indexed} ui={ui} />}
+      <p className={shared.muted}>{ui.t('api.historyNote')}</p>
     </section>
   );
 }

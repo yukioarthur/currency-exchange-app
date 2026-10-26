@@ -56,3 +56,7 @@ IA consultou documentação Frankfurter/Postman, executou nove requisições pú
 ## 26/10/2026 — Etapa 08
 
 IA extraiu utilitários, conectou conversão/formatação/variação existentes e criou 11 testes de casos de borda usando node:test. Todos passaram; build e traduções também. Filtros e calendário real não ligados à demonstração. Não realizou novo teste visual nem executou commit/push. Aluno deve testar antes de avançar.
+
+## 26/10/2026 — Etapa 09
+
+IA implementou serviço e conectou consultas manuais à UI. Testou 7 cenários de serviços com respostas simuladas mais 11 utilitários; verificou build, 120 traduções e consultas reais no navegador. Observou 170 moedas, EUR/BRL, histórico de sete dias e limpeza ao trocar o par. API de indicadores, efeitos, filtros e CSV permanecem pendentes. Não realizou commit/push. Evidência em images/stage-09-react.png.

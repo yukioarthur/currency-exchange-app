@@ -21,7 +21,7 @@ export default function HistoryChart({ rows, base, quote, indexed, ui }) {
 
   return (
     <svg className={styles.chart} viewBox="0 0 800 250" role="img" aria-labelledby="chart-description">
-      <title id="chart-description">{ui.t('chart.summary')} {base}/{quote} · {ui.t('chart.observations', { count: rows.length })} · {indexed ? ui.t('chart.percent') : ui.t('chart.nominal')}</title>
+      <title id="chart-description">{ui.t('chart.title')} {base}/{quote} · {ui.t('chart.observations', { count: rows.length })} · {indexed ? ui.t('chart.percent') : ui.t('chart.nominal')}</title>
       <path className={styles.grid} d="M60 30H760 M60 115H760 M60 200H760" />
       {ticks.map((rate, index) => (
         <text key={index} x="0" y={range ? 35 + index * 85 : 120}>{ui.number(rate, 2)}</text>

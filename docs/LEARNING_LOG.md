@@ -114,3 +114,7 @@ Nove consultas reais à Frankfurter v2, respostas/metadados em api-evidence, Col
 ## 26/10/2026 — Etapa 08 (aguardando teste do aluno)
 
 Funções de conversão, datas/períodos, filtros/ordenação e formatação extraídas para src/utils. Conversor e formatação já reutilizam funções; filtros/períodos reais aguardam conexão posterior. 11 testes Node passaram, incluindo limites de calendário e listas congeladas, além de build e 106 traduções. Explicações em FUNCTION_TESTS.md. Commit da etapa 07 confirmado (641a53e); execução no Postman ainda sem captura/relatório local. Nenhum commit/push executado pela IA.
+
+## 26/10/2026 — Etapa 09 (aguardando teste do aluno)
+
+Commit anterior 2f98efd confirmado. Serviço Frankfurter implementado com fetch/async-await, contratos, timeout e mensagens de erro. Consultas manuais por botões: moedas, conversão e histórico. UI agora usa dados reais para câmbio; indicadores continuam exemplos. Períodos calculados com data local. 18 testes, build, 120 traduções aprovados; integração real no navegador conferida. Guia STAGE_09.md. Nenhum commit/push executado pela IA.
