@@ -28,3 +28,11 @@ Atualizar este registro a cada etapa assistida. Não atribuir ao aluno uma revis
 - **Verificação:** sintaxe e paridade de traduções; troca de idiomas/temas, persistência e controles do gráfico no navegador. Evidências em images/preview-dark-english.png e images/preview-analysis-dark.png.
 - **Limitações:** Figma bloqueado pelo limite de chamadas Starter; integração Ibovespa não confirmada; APIs, conversão, filtros e CSV não implementados; mobile ainda não inspecionado nesta revisão.
 - **Participação do aluno:** definiu as extensões; revisão visual da nova proposta ainda pendente.
+
+## 25/10/2026 — Etapa 03
+
+- Solicitação do aluno: retomar as próximas etapas aqui no Codex.
+- Contribuição da IA: configuração React/Vite, interface JSX estática baseada no protótipo local revisado, CSS Modules, documentação de execução e guia didático.
+- Validação: build de produção, verificador de 98 traduções, conferência de whitespace e inspeção da aplicação no navegador; sem erros/avisos capturados no console.
+- Limites: não houve integração de APIs nem implementação dos controles; a inspeção visual foi no painel disponível, sem validação completa em múltiplos dispositivos. Revisão pelo aluno ainda pendente.
+- Histórico: implementação real na branch dev, preservando main na etapa anterior.

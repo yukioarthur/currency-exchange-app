@@ -80,3 +80,13 @@ Prévia de design e documentação completas em ENHANCEMENTS.md. O próximo pass
 14. Exportação CSV.
 15. Testes, responsividade e estados.
 16. Documentação e entrega final.
+
+## 25/10/2026 — Etapa 03: React, Vite e JSX
+
+Implementada a interface estática em App.jsx, com entrada main.jsx, estilos globais e CSS Module. Dependências instaladas: React 19.3.1, Vite 8.3.5 e plugin React 6.1.2; versões exatas no lockfile. A configuração foi adicionada ao repositório existente, preservando os protótipos e traduções.
+
+Conceitos: componente como função que retorna JSX; expressões JavaScript entre chaves; objetos com propriedades; className e CSS Modules; raiz React; diferença entre desenvolvimento e build. Guia e exercício em STAGE_03.md.
+
+Verificação: npm run build passou; 98 chaves de tradução consistentes; git diff --check sem erros de whitespace; aplicação compilada aberta no navegador, resultado fictício R$ 620,00 e cinco registros presentes, sem erros/avisos capturados no console. Inspeção visual no painel estreito disponível, sem uma bateria de dispositivos. Evidência: images/stage-03-react.png.
+
+Limites: controles estáticos; API, estado, preferências interativas, filtros e CSV ainda pendentes. Próxima etapa: extrair componentes por responsabilidade, mantendo o resultado visual.

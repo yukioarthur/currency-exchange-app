@@ -4,7 +4,26 @@ Projeto individual de aprendizagem: uma Single Page Application em React para co
 
 ## Estado atual
 
-Etapas 01 e 02 — requisitos, protótipos visuais no Figma e planejamento dos componentes. Ainda não existe aplicação executável nem configuração do Vite. Os comandos de instalação e execução serão documentados quando a implementação começar.
+Etapa 03 — primeira interface estática em React/JSX com Vite e CSS Modules. A tela usa exemplos fictícios, controles desativados e gráfico SVG ilustrativo. A extração de componentes será feita na etapa 04; eventos, tema e idioma interativos virão com estado. O português já é importado do dicionário em alguns textos.
+
+## Executar a aplicação
+
+Requer Node.js 22.12+ (validado com Node 24.19.0). Na pasta do projeto:
+
+```sh
+npm ci
+npm run dev
+```
+
+Abrir o endereço exibido pelo Vite, normalmente http://127.0.0.1:5173.
+
+```sh
+npm run build
+npm run preview
+npm run check:locales
+```
+
+O preview da compilação usa a porta 4174. A porta 4173 continua reservada à prévia de design anterior. O build gera `dist/`; esta pasta e `node_modules/` não entram no Git. `package-lock.json` registra as versões instaladas.
 
 Entrega prevista: **27/10/2026**.
 
@@ -23,6 +42,7 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 
 - [Requisitos e critérios de aceite](docs/REQUIREMENTS.md)
 - [Roteiro e registro de aprendizagem](docs/LEARNING_LOG.md)
+- [Guia da etapa 03: React, Vite e JSX](docs/STAGE_03.md)
 - [Registro do uso de IA](docs/AI_USAGE.md)
 - [Protótipos e evidências do Figma](docs/FIGMA.md)
 - [Mapa inicial de componentes](docs/COMPONENTS.md)

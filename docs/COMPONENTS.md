@@ -57,3 +57,7 @@ Planejar `Preferences` (locale, theme, onLocaleChange, onThemeChange), `Currency
 Idioma/tema ficam no ancestral comum. O histórico passa a possuir um par de análise identificado separadamente do conversor. `HistoryChart`, estatísticas e `HistoryExplorer` recebem a mesma série desse par. Indicadores têm estados independentes, evitando que uma falha externa derrube a consulta de câmbio.
 
 Os arquivos `src/i18n/pt-BR.json` e `en-US.json` já existem. Componentes React, providers e hooks continuam planejados; somente a prévia de design usa os dicionários neste momento.
+
+## Estado após etapa 03 — 25/10/2026
+
+App.jsx e App.module.css agora existem. A interface estática permanece concentrada em App; os demais componentes e contratos acima continuam planejados. Alguns textos já importam o dicionário português; a migração completa das mensagens e seleção de idioma virão com as etapas seguintes.
