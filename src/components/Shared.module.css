@@ -3,7 +3,7 @@
 .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
 .actions { margin: 18px 0; }
 .muted { color: var(--muted); font-size: 13px; }
-.positive { color: #146445; }
+.positive { color: var(--positive); }
 
 @media (max-width: 700px) {
 .card { padding: 20px 16px; }

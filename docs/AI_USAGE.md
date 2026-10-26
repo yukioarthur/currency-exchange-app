@@ -44,3 +44,7 @@ A IA extraiu componentes e seus estilos a partir da interface existente, mantend
 ## 26/10/2026 — Etapa 05
 
 A IA implementou props, CurrencySelect reutilizável, dados fictícios centralizados e listas com map. Adaptou o SVG ilustrativo e estatísticas para refletirem a mesma série da tabela. Verificou build, 98 traduções e renderização, sem erros/avisos capturados. O exercício didático fica para o aluno; não há APIs, estado nem controles ativos nesta etapa. Commit/push e aprovação pertencem ao aluno.
+
+## 26/10/2026 — Etapa 06
+
+IA implementou eventos/useState e compartilhamento de escolhas via App, tradução completa da tela React e cores de tema. Taxas/curvas inventadas e limites de período fixos servem apenas ao exercício. Verificações: build, paridade de 106 mensagens e navegador (conversão, vazio/negativo/zero, moedas iguais, troca, Enter, inglês/escuro, par/período/percentual). Sem erros/avisos de console capturados. Sem API ou persistência. Aluno fará sua revisão e executará commit/push.

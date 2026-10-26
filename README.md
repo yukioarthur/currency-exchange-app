@@ -4,7 +4,7 @@ Projeto individual de aprendizagem: uma Single Page Application em React para co
 
 ## Estado atual
 
-Etapa 05 — dados fictícios compartilhados por props, seletor reutilizável e listas geradas com map. A tela usa exemplos fictícios, controles desativados e gráfico SVG ilustrativo. Eventos, tema e idioma interativos virão com estado na etapa 06. A etapa aguarda teste e commit pelo aluno.
+Etapa 06 — conversão simulada, validações, escolhas da análise, tema e idioma ativados com eventos e useState. Dados inteiramente fictícios, com períodos fixos até 22/10/2026; sem API. Preferências voltam ao padrão ao recarregar. Filtros e CSV continuam pendentes. Aguardando teste e commit pelo aluno.
 
 ## Executar a aplicação
 
@@ -45,6 +45,7 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 - [Guia da etapa 03: React, Vite e JSX](docs/STAGE_03.md)
 - [Guia da etapa 04: Componentização](docs/STAGE_04.md)
 - [Guia da etapa 05: Props e listas](docs/STAGE_05.md)
+- [Guia da etapa 06: Eventos e estado](docs/STAGE_06.md)
 - [Registro do uso de IA](docs/AI_USAGE.md)
 - [Protótipos e evidências do Figma](docs/FIGMA.md)
 - [Mapa inicial de componentes](docs/COMPONENTS.md)

@@ -42,3 +42,10 @@ td:last-child, th:last-child { text-align: right; font-variant-numeric: tabular-
 @media (max-width: 700px) {
   h1 { font-size: 27px; }
 }
+
+/* O estado theme seleciona o conjunto de cores da aplicação inteira. */
+.appShell { min-height: 100vh; background: var(--background); color: var(--ink); color-scheme: light; --background: #f4f6fa; --ink: #17243b; --positive: #146445; --chart-fill: #2258d516; --focus: #a34a00; }
+.appShell[data-theme="dark"] { color-scheme: dark; --background: #0e1523; --surface: #172235; --ink: #edf3ff; --muted: #b1c0d5; --line: #3c4d65; --accent: #91b4ff; --soft: #223652; --positive: #7bdfb0; --chart-fill: #91b4ff18; --focus: #ffc77d; }
+button:not(:disabled), select:not(:disabled) { cursor: pointer; }
+button[aria-pressed="true"] { background: var(--soft); border-color: var(--accent); }
+:focus-visible { outline-color: var(--focus, #a34a00); }

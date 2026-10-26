@@ -96,5 +96,13 @@
   "currency.EUR": "Euro",
   "currency.USD": "Dólar americano",
   "currency.BRL": "Real brasileiro",
-  "currency.GBP": "Libra esterlina"
+  "currency.GBP": "Libra esterlina",
+  "app.stage": "Etapa 06 · Eventos e estado",
+  "app.demoLive": "Demonstração interativa • todos os valores e históricos são fictícios",
+  "converter.demo": "Conversão com taxas fictícias. A API será integrada em outra etapa.",
+  "converter.prompt": "Preencha os campos e clique em Converter.",
+  "validation.result": "O valor é grande demais para calcular.",
+  "chart.demo": "Histórico fictício até 22/10/2026; não representa o mercado.",
+  "chart.percent": "Variação em relação à primeira observação (%)",
+  "settings.session": "Preferências válidas nesta sessão; recarregar restaura o padrão."
 }

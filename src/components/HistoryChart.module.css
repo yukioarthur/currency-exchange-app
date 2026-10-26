@@ -2,5 +2,5 @@
 .chart text { fill: var(--muted); font-size: 15px; }
 .grid { stroke: var(--line); stroke-width: 1; }
 .series { fill: none; stroke: var(--accent); stroke-width: 3; }
-.area { fill: #2258d516; }
+.area { fill: var(--chart-fill); }
 .point { fill: var(--surface); stroke: var(--accent); stroke-width: 2; }

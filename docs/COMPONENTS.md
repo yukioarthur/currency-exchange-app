@@ -69,3 +69,7 @@ Implementados AppHeader, CurrencyConverter, HistoryPanel, HistoryChart, MarketIn
 ## Estado após etapa 05
 
 CurrencySelect implementado com label, currencies, selected. CurrencyConverter recebe currencies/conversion; HistoryPanel recebe currencies/periods/rows/base/quote; HistoryChart e HistoryExplorer recebem rows/base/quote. App importa exemplos de data/demo.js; os filhos leem as props sem alterá-las. Tabela, gráfico e estatísticas usam a mesma série; dados de conversão são um exemplo independente. Estado, hooks e serviços continuam pendentes.
+
+## Estado após etapa 06
+
+App possui locale, theme e analysis via useState; deriva rows e compartilha ui (tradução/formatação). AppHeader recebe escolhas e callbacks. CurrencyConverter guarda entradas/par/resultado/erro; usa taxas fictícias e não altera análise. CurrencySelect recebe onChange. HistoryPanel chama onChange(field,value), recebe analysis; HistoryChart recebe indexed/ui. HistoryExplorer e MarketIndicators recebem ui. Sem efeitos, hooks próprios ou serviços. Contratos iniciais acima são planejamento, estes descrevem a implementação atual.

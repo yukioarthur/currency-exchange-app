@@ -100,3 +100,9 @@ Build e conferência das 98 traduções passaram; conteúdo renderizado conferid
 ## 26/10/2026 — Etapa 05 (aguardando teste do aluno)
 
 Dados fictícios centralizados em src/data/demo.js. App passa props ao conversor, análise e tabela; CurrencySelect reutiliza o mesmo JSX em quatro lugares. map gera opções, registros e pontos do SVG; key identifica itens. Estatísticas e contador são derivados da série. Verificações de build, traduções e navegador passaram. Guia e exercício em STAGE_05.md. Nenhum commit/push executado pela IA.
+
+## 26/10/2026 — Etapa 06 (aguardando teste do aluno)
+
+Ativados campos controlados, submissão/Enter, validações, inversão, par/período da análise, escala percentual, idioma e tema. useState guarda preferências e análise em App; o conversor guarda suas entradas/resultado localmente. Gráfico e tabela recebem rows derivado das escolhas compartilhadas. Demonstração sem API, com limites de períodos fixos até 22/10/2026. Guia em STAGE_06.md.
+
+Build e 106 mensagens consistentes; testes no navegador de conversão, erros, zero, inversão, Enter, idioma/tema e histórico de 10 anos aprovados. Tema/idioma não persistem após reload. Nenhum commit/push executado pela IA.

@@ -35,3 +35,7 @@ node scripts/check-locales.cjs
 ```
 
 O verificador confere igualdade de chaves, textos não vazios, parâmetros e referências estáticas da prévia. Não substitui revisão humana da tradução.
+
+## Integração na etapa 06
+
+App seleciona o dicionário por locale e passa ui aos componentes. Intl formata números, moedas e datas. 106 chaves estão disponíveis. A troca é funcional nesta sessão; armazenamento persistente fica para a etapa de efeitos. Os exemplos de integração futura acima descrevem a direção planejada, não a existência de persistência agora.
