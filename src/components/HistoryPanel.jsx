@@ -1,3 +1,4 @@
+import { percentageChange } from '../utils/currency.js';
 import CurrencySelect from './CurrencySelect.jsx';
 import styles from './HistoryPanel.module.css';
 import shared from './Shared.module.css';
@@ -9,7 +10,7 @@ export default function HistoryPanel({ currencies, periods, rows, analysis, onCh
   const minimum = rates.length ? Math.min(...rates) : null;
   const maximum = rates.length ? Math.max(...rates) : null;
   const average = rates.length ? rates.reduce((total, rate) => total + rate, 0) / rates.length : null;
-  const change = rows.length >= 2 && rows[0].rate > 0 ? (rows[rows.length - 1].rate / rows[0].rate - 1) * 100 : null;
+  const change = rows.length >= 2 ? percentageChange(rows[0].rate, rows[rows.length - 1].rate) : null;
   const formatRate = (value) => value === null ? '—' : ui.number(value);
   return (
     <section className={shared.card} aria-labelledby="history-title">

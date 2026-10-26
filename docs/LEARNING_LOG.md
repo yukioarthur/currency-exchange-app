@@ -110,3 +110,7 @@ Build e 106 mensagens consistentes; testes no navegador de conversão, erros, ze
 ## 26/10/2026 — Etapa 07 (aguardando execução do aluno no Postman)
 
 Nove consultas reais à Frankfurter v2, respostas/metadados em api-evidence, Collection v2.1 e 21 verificações aprovadas contra respostas salvas. Conceitos: GET, endpoint, parâmetros, JSON, status HTTP, contrato e testes de resposta. Detalhes em API_TESTS.md. Descobertas: currencies usa iso_code; histórico EUR/BRL inclui domingo; intervalo invertido retorna 200 vazio. React permanece na demonstração da etapa 06. Aluno deve importar e executar Collection, depois registrar commit/push.
+
+## 26/10/2026 — Etapa 08 (aguardando teste do aluno)
+
+Funções de conversão, datas/períodos, filtros/ordenação e formatação extraídas para src/utils. Conversor e formatação já reutilizam funções; filtros/períodos reais aguardam conexão posterior. 11 testes Node passaram, incluindo limites de calendário e listas congeladas, além de build e 106 traduções. Explicações em FUNCTION_TESTS.md. Commit da etapa 07 confirmado (641a53e); execução no Postman ainda sem captura/relatório local. Nenhum commit/push executado pela IA.

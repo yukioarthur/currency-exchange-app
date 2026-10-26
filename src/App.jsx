@@ -1,3 +1,4 @@
+import { formatNumber, formatMoney, formatDate } from './utils/format.js';
 import { useState } from 'react';
 import { currencies, periods } from './data/demo.js';
 import { demoHistory, demoRate, periodStarts } from './data/interactiveDemo.js';
@@ -19,9 +20,9 @@ export default function App() {
   const messages = locale === 'pt-BR' ? ptBR : enUS;
   const ui = {
     t: (key, params = {}) => Object.entries(params).reduce((text, [name, value]) => text.replaceAll('{' + name + '}', value), messages[key] ?? key),
-    number: (value, digits = 4) => new Intl.NumberFormat(locale, { minimumFractionDigits: digits, maximumFractionDigits: digits }).format(value),
-    money: (value, currency) => new Intl.NumberFormat(locale, { style: 'currency', currency }).format(value),
-    date: (value) => new Intl.DateTimeFormat(locale, { timeZone: 'UTC' }).format(new Date(value + 'T00:00:00Z')),
+    number: (value, digits = 4) => formatNumber(value, locale, digits),
+    money: (value, currency) => formatMoney(value, currency, locale),
+    date: (value) => formatDate(value, locale),
   };
   const rows = demoHistory.filter(([date]) => date >= periodStarts[analysis.period]).map(([date, factor]) => ({
     date, rate: demoRate(analysis.base, factor) / demoRate(analysis.quote, factor),

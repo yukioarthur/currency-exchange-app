@@ -52,3 +52,7 @@ IA implementou eventos/useState e compartilhamento de escolhas via App, traduç�
 ## 26/10/2026 — Etapa 07
 
 IA consultou documentação Frankfurter/Postman, executou nove requisições públicas via Node fetch, salvou respostas e preparou Collection com 21 verificações. Executou os scripts da Collection sobre evidências salvas em Node, sem runtime/interface do Postman. Execução no Postman pelo aluno permanece pendente. Não integrou API na tela nem executou commit/push.
+
+## 26/10/2026 — Etapa 08
+
+IA extraiu utilitários, conectou conversão/formatação/variação existentes e criou 11 testes de casos de borda usando node:test. Todos passaram; build e traduções também. Filtros e calendário real não ligados à demonstração. Não realizou novo teste visual nem executou commit/push. Aluno deve testar antes de avançar.

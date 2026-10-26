@@ -1,3 +1,4 @@
+import { parseAmount, convertAmount } from '../utils/currency.js';
 import { useState } from 'react';
 import { demoRate, demoDate } from '../data/interactiveDemo.js';
 import CurrencySelect from './CurrencySelect.jsx';
@@ -15,13 +16,14 @@ export default function CurrencyConverter({ currencies, ui }) {
   function convert(event) {
     event.preventDefault();
     setResult(null);
-    if (amount.trim() === '' || !Number.isFinite(Number(amount)) || Number(amount) < 0) { setError('validation.amount'); return; }
+    let parsedAmount;
+    try { parsedAmount = parseAmount(amount); } catch (error) { setError(error.message); return; }
     if (pair.base === pair.quote) { setError('validation.currencies'); return; }
     const rate = demoRate(pair.base) / demoRate(pair.quote);
     const converted = Number(amount) * rate;
     if (!Number.isFinite(converted)) { setError('validation.result'); return; }
     setError('');
-    setResult({ amount: Number(amount), ...pair, rate, converted });
+    setResult({ amount: parsedAmount, ...pair, rate, converted });
   }
   return (
     <section className={shared.card} aria-labelledby="converter-title">
