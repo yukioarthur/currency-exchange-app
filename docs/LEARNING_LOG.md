@@ -96,3 +96,7 @@ Limites: controles estáticos; API, estado, preferências interativas, filtros e
 Extraídos seis componentes: AppHeader, CurrencyConverter, HistoryPanel, HistoryChart, MarketIndicators e HistoryExplorer, cada um com CSS Module. Shared.module.css concentra estilos comuns. App compõe as seções; HistoryPanel compõe o gráfico. Conceitos: função componente, import/export e composição. Detalhes em STAGE_04.md.
 
 Build e conferência das 98 traduções passaram; conteúdo renderizado conferido no navegador. Ações continuam estáticas. Commit/push ficam a cargo do aluno após seus testes. A próxima etapa só começa com sua indicação.
+
+## 26/10/2026 — Etapa 05 (aguardando teste do aluno)
+
+Dados fictícios centralizados em src/data/demo.js. App passa props ao conversor, análise e tabela; CurrencySelect reutiliza o mesmo JSX em quatro lugares. map gera opções, registros e pontos do SVG; key identifica itens. Estatísticas e contador são derivados da série. Verificações de build, traduções e navegador passaram. Guia e exercício em STAGE_05.md. Nenhum commit/push executado pela IA.

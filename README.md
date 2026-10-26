@@ -4,7 +4,7 @@ Projeto individual de aprendizagem: uma Single Page Application em React para co
 
 ## Estado atual
 
-Etapa 04 — interface estática organizada em seis componentes React e CSS Modules. A tela usa exemplos fictícios, controles desativados e gráfico SVG ilustrativo. Props e listas serão estudadas na etapa 05; eventos, tema e idioma interativos virão com estado. A etapa aguarda teste e commit pelo aluno.
+Etapa 05 — dados fictícios compartilhados por props, seletor reutilizável e listas geradas com map. A tela usa exemplos fictícios, controles desativados e gráfico SVG ilustrativo. Eventos, tema e idioma interativos virão com estado na etapa 06. A etapa aguarda teste e commit pelo aluno.
 
 ## Executar a aplicação
 
@@ -44,6 +44,7 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 - [Roteiro e registro de aprendizagem](docs/LEARNING_LOG.md)
 - [Guia da etapa 03: React, Vite e JSX](docs/STAGE_03.md)
 - [Guia da etapa 04: Componentização](docs/STAGE_04.md)
+- [Guia da etapa 05: Props e listas](docs/STAGE_05.md)
 - [Registro do uso de IA](docs/AI_USAGE.md)
 - [Protótipos e evidências do Figma](docs/FIGMA.md)
 - [Mapa inicial de componentes](docs/COMPONENTS.md)
@@ -52,7 +53,7 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 
 Prévia de design revisada: executar `node scripts/preview.cjs` e abrir `http://127.0.0.1:4173`. Usa dados fictícios; não é a SPA final. O Figma ainda não contém esta revisão devido ao limite da integração.
 
-Os documentos de testes de API e funções serão adicionados nas respectivas etapas. O repositório público no GitHub ainda não foi criado.
+Os documentos de testes de API e funções serão adicionados nas respectivas etapas. O remoto está configurado em https://github.com/yukioarthur/currency-exchange-app. A publicação da aplicação no GitHub Pages ainda está pendente.
 
 ## Processo
 

@@ -65,3 +65,7 @@ App.jsx e App.module.css agora existem. A interface estática permanece concentr
 ## Estado após etapa 04
 
 Implementados AppHeader, CurrencyConverter, HistoryPanel, HistoryChart, MarketIndicators e HistoryExplorer em src/components, com CSS Modules próprios e Shared.module.css para regras comuns. App organiza a tela; HistoryPanel inclui HistoryChart. Componentes menores e contratos de props continuam planejados para as próximas etapas. Nenhum estado ou serviço de API adicionado.
+
+## Estado após etapa 05
+
+CurrencySelect implementado com label, currencies, selected. CurrencyConverter recebe currencies/conversion; HistoryPanel recebe currencies/periods/rows/base/quote; HistoryChart e HistoryExplorer recebem rows/base/quote. App importa exemplos de data/demo.js; os filhos leem as props sem alterá-las. Tabela, gráfico e estatísticas usam a mesma série; dados de conversão são um exemplo independente. Estado, hooks e serviços continuam pendentes.

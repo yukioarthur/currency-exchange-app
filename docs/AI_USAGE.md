@@ -40,3 +40,7 @@ Atualizar este registro a cada etapa assistida. Não atribuir ao aluno uma revis
 ## Etapa 04 — Organização do código
 
 A IA extraiu componentes e seus estilos a partir da interface existente, mantendo os dados fictícios. Verificou build, traduções e conteúdo no navegador. O aluno solicitou executar pessoalmente commit/push após testar: nenhuma dessas ações foi executada pela IA. Revisão visual do aluno pendente.
+
+## 26/10/2026 — Etapa 05
+
+A IA implementou props, CurrencySelect reutilizável, dados fictícios centralizados e listas com map. Adaptou o SVG ilustrativo e estatísticas para refletirem a mesma série da tabela. Verificou build, 98 traduções e renderização, sem erros/avisos capturados. O exercício didático fica para o aluno; não há APIs, estado nem controles ativos nesta etapa. Commit/push e aprovação pertencem ao aluno.
