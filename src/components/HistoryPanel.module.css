@@ -1,0 +1,14 @@
+.chartHeading { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.chartHeading { justify-content: space-between; margin: 24px 0 20px; }
+.inline { display: flex; align-items: center; }
+.inline input { width: 18px; min-height: 18px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.stats > div { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.stats span { display: block; font-size: 13px; color: var(--muted); }
+.stats strong { font-size: 21px; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 700px) {
+.stats { grid-template-columns: 1fr 1fr; }
+.chartHeading { display: block; }
+.inline { margin-top: 12px; }
+}

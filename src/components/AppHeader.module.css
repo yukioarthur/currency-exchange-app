@@ -1,0 +1,10 @@
+.header { display: flex; justify-content: space-between; align-items: flex-start; gap: 28px; }
+.brand { font-size: 12px; letter-spacing: .12em; font-weight: 700; color: var(--accent); }
+.preferences { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.preferences { min-width: 240px; }
+
+@media (max-width: 700px) {
+.header { display: block; }
+.preferences { margin-top: 20px; }
+.preferences label { flex: 1; }
+}

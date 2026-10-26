@@ -4,7 +4,7 @@ Projeto individual de aprendizagem: uma Single Page Application em React para co
 
 ## Estado atual
 
-Etapa 03 — primeira interface estática em React/JSX com Vite e CSS Modules. A tela usa exemplos fictícios, controles desativados e gráfico SVG ilustrativo. A extração de componentes será feita na etapa 04; eventos, tema e idioma interativos virão com estado. O português já é importado do dicionário em alguns textos.
+Etapa 04 — interface estática organizada em seis componentes React e CSS Modules. A tela usa exemplos fictícios, controles desativados e gráfico SVG ilustrativo. Props e listas serão estudadas na etapa 05; eventos, tema e idioma interativos virão com estado. A etapa aguarda teste e commit pelo aluno.
 
 ## Executar a aplicação
 
@@ -43,6 +43,7 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 - [Requisitos e critérios de aceite](docs/REQUIREMENTS.md)
 - [Roteiro e registro de aprendizagem](docs/LEARNING_LOG.md)
 - [Guia da etapa 03: React, Vite e JSX](docs/STAGE_03.md)
+- [Guia da etapa 04: Componentização](docs/STAGE_04.md)
 - [Registro do uso de IA](docs/AI_USAGE.md)
 - [Protótipos e evidências do Figma](docs/FIGMA.md)
 - [Mapa inicial de componentes](docs/COMPONENTS.md)

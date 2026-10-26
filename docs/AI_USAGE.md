@@ -36,3 +36,7 @@ Atualizar este registro a cada etapa assistida. Não atribuir ao aluno uma revis
 - Validação: build de produção, verificador de 98 traduções, conferência de whitespace e inspeção da aplicação no navegador; sem erros/avisos capturados no console.
 - Limites: não houve integração de APIs nem implementação dos controles; a inspeção visual foi no painel disponível, sem validação completa em múltiplos dispositivos. Revisão pelo aluno ainda pendente.
 - Histórico: implementação real na branch dev, preservando main na etapa anterior.
+
+## Etapa 04 — Organização do código
+
+A IA extraiu componentes e seus estilos a partir da interface existente, mantendo os dados fictícios. Verificou build, traduções e conteúdo no navegador. O aluno solicitou executar pessoalmente commit/push após testar: nenhuma dessas ações foi executada pela IA. Revisão visual do aluno pendente.

@@ -1,0 +1,2 @@
+.result { display: grid; gap: 8px; background: var(--soft); padding: 20px; border-radius: 12px; }
+.result strong { font-size: 36px; color: var(--accent); }

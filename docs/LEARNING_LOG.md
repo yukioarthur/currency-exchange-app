@@ -90,3 +90,9 @@ Conceitos: componente como função que retorna JSX; expressões JavaScript entr
 Verificação: npm run build passou; 98 chaves de tradução consistentes; git diff --check sem erros de whitespace; aplicação compilada aberta no navegador, resultado fictício R$ 620,00 e cinco registros presentes, sem erros/avisos capturados no console. Inspeção visual no painel estreito disponível, sem uma bateria de dispositivos. Evidência: images/stage-03-react.png.
 
 Limites: controles estáticos; API, estado, preferências interativas, filtros e CSV ainda pendentes. Próxima etapa: extrair componentes por responsabilidade, mantendo o resultado visual.
+
+## Etapa 04 — Componentização (aguardando teste do aluno)
+
+Extraídos seis componentes: AppHeader, CurrencyConverter, HistoryPanel, HistoryChart, MarketIndicators e HistoryExplorer, cada um com CSS Module. Shared.module.css concentra estilos comuns. App compõe as seções; HistoryPanel compõe o gráfico. Conceitos: função componente, import/export e composição. Detalhes em STAGE_04.md.
+
+Build e conferência das 98 traduções passaram; conteúdo renderizado conferido no navegador. Ações continuam estáticas. Commit/push ficam a cargo do aluno após seus testes. A próxima etapa só começa com sua indicação.

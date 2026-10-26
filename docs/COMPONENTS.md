@@ -61,3 +61,7 @@ Os arquivos `src/i18n/pt-BR.json` e `en-US.json` já existem. Componentes React,
 ## Estado após etapa 03 — 25/10/2026
 
 App.jsx e App.module.css agora existem. A interface estática permanece concentrada em App; os demais componentes e contratos acima continuam planejados. Alguns textos já importam o dicionário português; a migração completa das mensagens e seleção de idioma virão com as etapas seguintes.
+
+## Estado após etapa 04
+
+Implementados AppHeader, CurrencyConverter, HistoryPanel, HistoryChart, MarketIndicators e HistoryExplorer em src/components, com CSS Modules próprios e Shared.module.css para regras comuns. App organiza a tela; HistoryPanel inclui HistoryChart. Componentes menores e contratos de props continuam planejados para as próximas etapas. Nenhum estado ou serviço de API adicionado.
