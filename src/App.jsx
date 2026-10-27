@@ -54,7 +54,7 @@ export default function App() {
         <CurrencyConverter currencies={currencies} ui={ui} />
         <HistoryPanel currencies={currencies} periods={periods} rows={rows} analysis={analysis} onChange={changeAnalysis} onLoad={historyState.retry} requestState={historyState} ui={ui} />
         <MarketIndicators ui={ui} />
-        <HistoryExplorer rows={rows} base={analysis.base} quote={analysis.quote} status={historyState.status} ui={ui} />
+        <HistoryExplorer key={[analysis.base, analysis.quote, analysis.period].join("-")} rows={rows} base={analysis.base} quote={analysis.quote} status={historyState.status} ui={ui} />
         <footer className={shared.muted}>{ui.t('app.stage')} · React + Vite</footer>
       </main>
     </div>

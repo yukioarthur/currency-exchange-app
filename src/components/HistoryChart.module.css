@@ -1,6 +1,2 @@
-.chart { display: block; width: 100%; height: auto; min-height: 160px; }
-.chart text { fill: var(--muted); font-size: 15px; }
-.grid { stroke: var(--line); stroke-width: 1; }
-.series { fill: none; stroke: var(--accent); stroke-width: 3; }
-.area { fill: var(--chart-fill); }
-.point { fill: var(--surface); stroke: var(--accent); stroke-width: 2; }
+.chart { min-width: 0; width: 100%; }
+.chart p { color: var(--muted); font-size: 13px; }

@@ -64,3 +64,6 @@ IA implementou serviço e conectou consultas manuais à UI. Testou 7 cenários d
 ## 27/10/2026 — Bloco 1
 
 IA implementou etapas 10/11 e persistência. 23 testes de utilitários/serviço/armazenamento passaram; navegador confirmou automação e persistência. Corrigida referência remanescente a setHistoryState detectada durante a primeira rodada visual; cenário repetido com sucesso. Não houve simulação controlada de corrida no runtime React, apenas trocas rápidas reais e testes de cancelamento do serviço. Aluno executará teste/commit/push.
+
+## 27/10/2026 — Bloco 2
+IA auxiliou na integração do Recharts, controles de filtros/ordenação, exportação CSV e testes. Foram executados 25 testes, validação das traduções, build e verificações no navegador, incluindo download real. O aluno deve revisar, compreender, testar e executar o commit. Nenhum commit ou push foi feito pela IA.

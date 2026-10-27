@@ -1,36 +1,24 @@
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import styles from './HistoryChart.module.css';
 
-// SVG de demonstração; a biblioteca de gráficos será introduzida na etapa 12.
 export default function HistoryChart({ rows, base, quote, indexed, ui }) {
-  if (rows.length === 0) return <p>{ui.t('chart.noData')}</p>;
-
-  const displayed = rows.map((row) => ({ ...row, rate: indexed ? (row.rate / rows[0].rate - 1) * 100 : row.rate }));
-  const rates = displayed.map((row) => row.rate);
-  const minimum = Math.min(...rates);
-  const maximum = Math.max(...rates);
-  const range = maximum - minimum;
-  const firstDay = Date.parse(rows[0].date);
-  const duration = Date.parse(rows[rows.length - 1].date) - firstDay;
-  const points = displayed.map((row) => ({
-    ...row,
-    x: duration ? 60 + ((Date.parse(row.date) - firstDay) / duration) * 700 : 410,
-    y: range ? 200 - ((row.rate - minimum) / range) * 170 : 115,
-  }));
-  const line = points.map((point, index) => `${index === 0 ? 'M' : 'L'}${point.x} ${point.y}`).join(' ');
-  const ticks = range ? [maximum, (minimum + maximum) / 2, minimum] : [minimum];
-
+  if (!rows.length) return <p>{ui.t('chart.noData')}</p>;
+  const data = rows.map(row => ({ ...row, time: Date.parse(row.date), value: indexed ? (row.rate / rows[0].rate - 1) * 100 : row.rate }));
+  const unit = indexed ? '%' : ui.t('chart.unit', { base, quote });
+  const date = time => ui.date(new Date(time).toISOString().slice(0, 10));
   return (
-    <svg className={styles.chart} viewBox="0 0 800 250" role="img" aria-labelledby="chart-description">
-      <title id="chart-description">{ui.t('chart.title')} {base}/{quote} · {ui.t('chart.observations', { count: rows.length })} · {indexed ? ui.t('chart.percent') : ui.t('chart.nominal')}</title>
-      <path className={styles.grid} d="M60 30H760 M60 115H760 M60 200H760" />
-      {ticks.map((rate, index) => (
-        <text key={index} x="0" y={range ? 35 + index * 85 : 120}>{ui.number(rate, 2)}</text>
-      ))}
-      <path className={styles.area} d={`${line} L${points[points.length - 1].x} 200 L${points[0].x} 200 Z`} />
-      <path className={styles.series} d={line} />
-      {points.map((point) => <circle key={point.date} className={styles.point} cx={point.x} cy={point.y} r="5" />)}
-      <text x="60" y="235">{ui.date(rows[0].date)}</text>
-      <text x="760" y="235" textAnchor="end">{ui.date(rows[rows.length - 1].date)}</text>
-    </svg>
+    <div className={styles.chart}>
+      <p>{unit} · {ui.t('chart.observations', { count: rows.length })}</p>
+      <ResponsiveContainer width="100%" height={320} minWidth={0}>
+        <LineChart data={data} accessibilityLayer margin={{ top: 15, right: 25, bottom: 15, left: 10 }}>
+          <CartesianGrid stroke="var(--line)" strokeDasharray="3 3" />
+          <XAxis dataKey="time" type="number" domain={['dataMin', 'dataMax']} tickFormatter={date} tick={{ fill: 'var(--muted)', fontSize: 12 }} minTickGap={45} />
+          <YAxis domain={['auto', 'auto']} width={75} tickFormatter={value => ui.number(value, 3)} tick={{ fill: 'var(--muted)', fontSize: 12 }} />
+          <Tooltip labelFormatter={date} formatter={value => [ui.number(value, 6), unit]} contentStyle={{ background: 'var(--surface)', color: 'var(--ink)', borderColor: 'var(--line)' }} />
+          <Line type="linear" dataKey="value" name={unit} stroke="var(--accent)" strokeWidth={2} dot={rows.length <= 30} activeDot={{ r: 6 }} isAnimationActive={false} />
+        </LineChart>
+      </ResponsiveContainer>
+      <p>{ui.t('chart.help')}</p>
+    </div>
   );
 }

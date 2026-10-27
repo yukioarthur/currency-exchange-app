@@ -4,7 +4,7 @@ Projeto individual de aprendizagem: uma Single Page Application em React para co
 
 ## Estado atual
 
-Bloco 1 concluído em código (etapas 10 e 11): moedas/histórico automáticos via useEffect e Custom Hooks, consultas antigas canceladas, tema/idioma persistidos no navegador. Conversão usa API real por botão. Gráfico com biblioteca, filtros, CSV e publicação seguem pendentes. Aguardando teste e commit do aluno.
+Bloco 2 implementado (etapas 12–14): gráfico interativo com Recharts, filtros combinados, ordenação e CSV. Os efeitos, hooks e preferências do bloco 1 já estão registrados. Aguardando teste e commit do aluno. Revisão final e publicação seguem pendentes; Selic e Ibovespa permanecem exemplos fictícios.
 
 ## Executar a aplicação
 
@@ -36,7 +36,7 @@ Entrega prevista: **27/10/2026**.
 
 ## Tecnologias exigidas pelo enunciado
 
-React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffect, Custom Hooks, biblioteca de gráficos, Postman e Git/GitHub. A biblioteca de gráficos será escolhida na etapa correspondente.
+React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffect, Custom Hooks, biblioteca de gráficos, Postman e Git/GitHub. Recharts é a biblioteca de gráficos utilizada.
 
 ## Documentação
 
@@ -50,6 +50,7 @@ React, JavaScript, JSX, Vite, CSS Modules, fetch, async/await, useState, useEffe
 - [Investigação da API e roteiro Postman](docs/API_TESTS.md)
 - [Etapa 08: funções e testes](docs/FUNCTION_TESTS.md)
 - [Etapa 09: integração com a API](docs/STAGE_09.md)
+- [Bloco 2: gráficos, filtros e CSV](docs/BLOCK_02.md)
 - [Bloco 1: efeitos, hooks e preferências](docs/BLOCK_01.md)
 - [Collection Postman](postman/Frankfurter.postman_collection.json)
 - [Protótipos e evidências do Figma](docs/FIGMA.md)
