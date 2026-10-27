@@ -44,3 +44,7 @@ A execução no Postman da etapa 07 continua sem evidência local; seus 21 teste
 ## Etapa 09 — Contratos do serviço
 
 tests/services.test.js adiciona 7 testes com respostas simuladas: mapeamento de moedas, moedas inválidas, cotação/URL, histórico ordenado/vazio, dados inválidos, validações antes da rede e erros HTTP/rede/timeout/JSON. Total atual: 18 testes aprovados. As funções de conversão agora são usadas também com a cotação real recebida.
+
+## Bloco 1 — 27/10/2026
+
+Total atual: 23 testes. Adicionados cancelamento antes da resposta e durante leitura do corpo, além de leitura/gravação de preferências com armazenamento bloqueado. Todos passaram. Verificação de hooks no navegador descrita em BLOCK_01.md; testes de serviço não equivalem a testes de montagem React.

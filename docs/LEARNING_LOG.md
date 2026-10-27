@@ -118,3 +118,7 @@ Funções de conversão, datas/períodos, filtros/ordenação e formatação ext
 ## 26/10/2026 — Etapa 09 (aguardando teste do aluno)
 
 Commit anterior 2f98efd confirmado. Serviço Frankfurter implementado com fetch/async-await, contratos, timeout e mensagens de erro. Consultas manuais por botões: moedas, conversão e histórico. UI agora usa dados reais para câmbio; indicadores continuam exemplos. Períodos calculados com data local. 18 testes, build, 120 traduções aprovados; integração real no navegador conferida. Guia STAGE_09.md. Nenhum commit/push executado pela IA.
+
+## 27/10/2026 — Bloco 1, etapas 10 e 11 (aguardando teste do aluno)
+
+Aplicado o agrupamento aprovado: efeitos automáticos e extração de useRequest/useCurrencies/useHistory/usePreferences, com cancelamento e persistência. useCallback estabiliza o carregador de histórico. 23 testes, build e 121 traduções aprovados. Testes no navegador: carregamento inicial, trocas rápidas, atualização e preferências após reload. Guia em BLOCK_01.md. Nenhum commit/push executado pela IA.

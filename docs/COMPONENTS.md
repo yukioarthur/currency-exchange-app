@@ -77,3 +77,7 @@ App possui locale, theme e analysis via useState; deriva rows e compartilha ui (
 ## Estado após etapa 09
 
 App guarda currencies/currencyStatus/currencyError e historyState (status, rows, error, range). HistoryPanel recebe requestState/onLoad. CurrencyConverter consulta getRate e usa loading para bloquear edição durante a requisição. CurrencySelect usa ui.currencyName com Intl.DisplayNames e fallback; HistoryExplorer recebe status. Serviço separado das funções puras e da UI; nenhuma chamada automática/useEffect ainda.
+
+## Estado após bloco 1 (etapas 10 e 11)
+
+App mantém analysis, mas consultas pertencem a useCurrencies/useHistory e preferências a usePreferences. useRequest centraliza o ciclo de efeito, limpeza, cancelamento e descarte de resposta antiga. HistoryPanel recebe retry como onLoad e permite mudar seleção durante carregamento. O serviço aceita sinal externo além do timeout. Conversor permanece por submissão explícita.

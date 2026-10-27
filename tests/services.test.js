@@ -41,3 +41,19 @@ test('Erros HTTP, rede, timeout e JSON malformado são distinguíveis', async ()
   await assert.rejects(getRate('EUR','BRL',async()=>{throw new DOMException('Timeout','TimeoutError');}),/api.timeout/);
   await assert.rejects(getRate('EUR','BRL',async()=>new Response('<html>')),/api.invalid/);
 });
+
+test('Cancelamento externo chega ao fetch e preserva AbortError', async () => {
+  const controller = new AbortController();
+  const pending = getRate('EUR','BRL', (_url, {signal}) => new Promise((_resolve,reject) => {
+    signal.addEventListener('abort', () => reject(signal.reason), {once:true});
+  }), controller.signal);
+  controller.abort();
+  await assert.rejects(pending, {name:'AbortError'});
+});
+test('Cancelamento durante leitura do corpo não vira erro de JSON', async () => {
+  const controller = new AbortController();
+  const pending = getRate('EUR','BRL', async () => ({ok:true,json:async()=>{
+    controller.abort(); throw controller.signal.reason;
+  }}), controller.signal);
+  await assert.rejects(pending, {name:'AbortError'});
+});

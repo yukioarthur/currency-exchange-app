@@ -60,3 +60,7 @@ IA extraiu utilitários, conectou conversão/formatação/variação existentes 
 ## 26/10/2026 — Etapa 09
 
 IA implementou serviço e conectou consultas manuais à UI. Testou 7 cenários de serviços com respostas simuladas mais 11 utilitários; verificou build, 120 traduções e consultas reais no navegador. Observou 170 moedas, EUR/BRL, histórico de sete dias e limpeza ao trocar o par. API de indicadores, efeitos, filtros e CSV permanecem pendentes. Não realizou commit/push. Evidência em images/stage-09-react.png.
+
+## 27/10/2026 — Bloco 1
+
+IA implementou etapas 10/11 e persistência. 23 testes de utilitários/serviço/armazenamento passaram; navegador confirmou automação e persistência. Corrigida referência remanescente a setHistoryState detectada durante a primeira rodada visual; cenário repetido com sucesso. Não houve simulação controlada de corrida no runtime React, apenas trocas rápidas reais e testes de cancelamento do serviço. Aluno executará teste/commit/push.

@@ -15,7 +15,7 @@ export default function HistoryPanel({ currencies, periods, rows, analysis, onCh
   return (
     <section className={shared.card} aria-labelledby="history-title">
       <h2 id="history-title">{ui.t('chart.title')}</h2>
-      <fieldset disabled={!currencies.length || requestState.status === 'loading'}>
+      <fieldset disabled={!currencies.length}>
       <div className={shared.actions}>
         <button aria-pressed={!indexed} onClick={() => onChange('indexed', false)}>{ui.t('chart.pair')}</button>
         <button aria-pressed={indexed} onClick={() => onChange('indexed', true)}>{ui.t('chart.individual')}</button>
@@ -27,13 +27,13 @@ export default function HistoryPanel({ currencies, periods, rows, analysis, onCh
           {periods.map((item) => <option key={item.id} value={item.id}>{ui.t('period.' + item.id)}</option>)}
         </select></label>
       </div>
-      <button onClick={onLoad}>{ui.t(requestState.status === 'loading' ? 'status.loading' : 'api.loadHistory')}</button>
+      <button onClick={onLoad} disabled={requestState.status === 'loading'}>{ui.t(requestState.status === 'loading' ? 'status.loading' : 'api.loadHistory')}</button>
       </fieldset>
       <p role="status">{requestState.status === 'idle' ? ui.t('api.historyPrompt') : requestState.status === 'loading' ? ui.t('status.loading') : requestState.status === 'empty' ? ui.t('chart.noData') : ''}</p>
       {requestState.error && <p role="alert">{ui.t(requestState.error)}</p>}
       {requestState.range && <p className={shared.muted}>{ui.t('api.interval')}: {ui.date(requestState.range.from)} – {ui.date(requestState.range.to)}</p>}
       <p className={shared.muted}>{ui.t('chart.referenceNote')}</p>
-      <div className={styles.chartHeading}><h3>{base} / {quote}</h3><label className={styles.inline}><input type="checkbox" disabled={requestState.status === 'loading'} checked={indexed} onChange={(event) => onChange('indexed', event.target.checked)} />{ui.t('chart.indexed')}</label></div>
+      <div className={styles.chartHeading}><h3>{base} / {quote}</h3><label className={styles.inline}><input type="checkbox" checked={indexed} onChange={(event) => onChange('indexed', event.target.checked)} />{ui.t('chart.indexed')}</label></div>
       <div className={styles.stats}>
         <div><span>{ui.t('chart.change')}</span><strong>{change === null ? '—' : (change > 0 ? '+' : '') + ui.number(change, 2) + '%'}</strong></div>
         <div><span>{ui.t('chart.minimum')}</span><strong>{formatRate(minimum)}</strong></div>
