@@ -21,7 +21,7 @@ export default function HistoryExplorer({ rows, base, quote, status, ui }) {
   return (
     <section className={shared.card} aria-labelledby="records-title">
       <h2 id="records-title">{ui.t('table.title')}</h2>
-      <div className={shared.fields}>
+      <div className={shared.fields} aria-describedby={error ? "filter-error" : undefined}>
         <label>{ui.t('table.start')}<input type="date" value={filters.from} onChange={event => change('from', event.target.value)} /></label>
         <label>{ui.t('table.end')}<input type="date" value={filters.to} onChange={event => change('to', event.target.value)} /></label>
         <label>{ui.t('table.min')}<input type="number" min="0" step="any" value={filters.min} placeholder={ui.t('common.noLimit')} onChange={event => change('min', event.target.value)} /></label>
@@ -33,9 +33,9 @@ export default function HistoryExplorer({ rows, base, quote, status, ui }) {
           {['dateAsc', 'dateDesc', 'rateAsc', 'rateDesc'].map(value => <option key={value} value={value}>{ui.t('table.' + value)}</option>)}
         </select></label>
       </div>
-      {error && <p role="alert">{ui.t(error)}</p>}
-      <p role="status">{ui.t('table.count', { count: visibleRows.length })}</p>
-      {!error && !visibleRows.length && status !== 'loading' && <p>{ui.t('status.empty')}</p>}
+      {error && <p id="filter-error" role="alert">{ui.t(error)}</p>}
+      <p role="status">{ui.t(status === 'loading' ? 'status.loading' : status === 'error' ? 'status.error' : status === 'idle' ? 'api.historyPrompt' : 'table.count', { count: visibleRows.length })}</p>
+      {!error && !visibleRows.length && (status === 'success' || status === 'empty') && <p>{ui.t('status.empty')}</p>}
       <div className={styles.tableWrap} tabIndex={0} role="region" aria-label={ui.t('table.title')}>
         <table>
           <caption>{base} / {quote} · {ui.t('api.source')}</caption>

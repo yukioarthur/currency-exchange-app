@@ -97,7 +97,7 @@
   "currency.USD": "US dollar",
   "currency.BRL": "Brazilian real",
   "currency.GBP": "Pound sterling",
-  "app.stage": "Block 2 · Charts, filters and CSV",
+  "app.stage": "Currency conversion and analysis",
   "app.demoLive": "Interactive demo • all values and historical data are fictional",
   "converter.demo": "Conversion uses fictional rates. API integration comes in a later stage.",
   "converter.prompt": "Fill in the fields and click Convert.",

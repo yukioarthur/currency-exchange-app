@@ -8,7 +8,6 @@ export default function HistoryChart({ rows, base, quote, indexed, ui }) {
   const date = time => ui.date(new Date(time).toISOString().slice(0, 10));
   return (
     <div className={styles.chart}>
-      <p>{unit} · {ui.t('chart.observations', { count: rows.length })}</p>
       <ResponsiveContainer width="100%" height={320} minWidth={0}>
         <LineChart data={data} accessibilityLayer margin={{ top: 15, right: 25, bottom: 15, left: 10 }}>
           <CartesianGrid stroke="var(--line)" strokeDasharray="3 3" />

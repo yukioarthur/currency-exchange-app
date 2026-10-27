@@ -4,7 +4,6 @@ import { periods } from './data/demo.js';
 import { useCurrencies } from './hooks/useCurrencies.js';
 import { useHistory } from './hooks/useHistory.js';
 import { usePreferences } from './hooks/usePreferences.js';
-import { localDate, periodRange } from './utils/dates.js';
 import ptBR from './i18n/pt-BR.json';
 import enUS from './i18n/en-US.json';
 import AppHeader from './components/AppHeader.jsx';

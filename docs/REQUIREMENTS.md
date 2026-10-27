@@ -105,3 +105,11 @@ Este documento foi conferido contra o enunciado lido no Notion. Os critérios ac
 | EX06 | Ibovespa | Pontos, variação diária disponível, data/hora e fornecedor validado; sem substituir por ETF. |
 
 Detalhamento, dependências e limites: [ENHANCEMENTS.md](ENHANCEMENTS.md). Os extras não substituem os requisitos do Notion. A integração do Ibovespa depende de validação do fornecedor e eventual decisão de arquitetura se exigir chave privada.
+
+## Situação atual — 27/10/2026
+As seções iniciais descrevem o planejamento de 23/10 e não substituem este balanço.
+RF01–RF13 implementados. Evidências e limites de verificação em QA_FINAL.md; scripts em tests/.
+RNF01–RNF04 e RNF08 presentes no código/histórico; RNF05–RNF06 inspecionados em larguras representativas e no uso do gráfico por teclado, sem auditoria universal. RNF07 documentado com lockfile e comandos de instalação/build.
+A investigação da API foi realizada na etapa 07: API_TESTS.md e api-evidence/ guardam resultados. A collection existe; execução no aplicativo Postman ainda não confirmada.
+EX01 parcial: claro/escuro persistidos, sem tema de sistema. EX02–EX04 implementados. EX05–EX06 pendentes: cards fictícios.
+Entrega: repositório público confirmado; documentação, protótipos originais e collection presentes. Publicação e conferência do link remoto dependem dos passos em DELIVERY.md.

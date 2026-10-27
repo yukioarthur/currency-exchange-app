@@ -2,7 +2,8 @@ import { percentageChange } from '../utils/currency.js';
 import CurrencySelect from './CurrencySelect.jsx';
 import styles from './HistoryPanel.module.css';
 import shared from './Shared.module.css';
-import HistoryChart from './HistoryChart.jsx';
+import { lazy, Suspense } from 'react';
+const HistoryChart = lazy(() => import('./HistoryChart.jsx'));
 
 export default function HistoryPanel({ currencies, periods, rows, analysis, onChange, onLoad, requestState, ui }) {
   const { base, quote, period, indexed } = analysis;
@@ -41,7 +42,7 @@ export default function HistoryPanel({ currencies, periods, rows, analysis, onCh
         <div><span>{ui.t('chart.average')}</span><strong>{formatRate(average)}</strong></div>
       </div>
       <p className={shared.muted}>{indexed ? ui.t('chart.percent') : ui.t('chart.unit', { base, quote })} · {ui.t('chart.observations', { count: rows.length })}</p>
-      {rows.length > 0 && <HistoryChart rows={rows} base={base} quote={quote} indexed={indexed} ui={ui} />}
+      {rows.length > 0 && <Suspense fallback={<p role="status">{ui.t('status.loading')}</p>}><HistoryChart rows={rows} base={base} quote={quote} indexed={indexed} ui={ui} /></Suspense>}
       <p className={shared.muted}>{ui.t('api.historyNote')}</p>
     </section>
   );

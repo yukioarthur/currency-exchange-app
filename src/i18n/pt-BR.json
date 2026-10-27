@@ -97,7 +97,7 @@
   "currency.USD": "Dólar americano",
   "currency.BRL": "Real brasileiro",
   "currency.GBP": "Libra esterlina",
-  "app.stage": "Bloco 2 · Gráficos, filtros e CSV",
+  "app.stage": "Conversão e análise de moedas",
   "app.demoLive": "Demonstração interativa • todos os valores e históricos são fictícios",
   "converter.demo": "Conversão com taxas fictícias. A API será integrada em outra etapa.",
   "converter.prompt": "Preencha os campos e clique em Converter.",

@@ -81,3 +81,17 @@ App guarda currencies/currencyStatus/currencyError e historyState (status, rows,
 ## Estado após bloco 1 (etapas 10 e 11)
 
 App mantém analysis, mas consultas pertencem a useCurrencies/useHistory e preferências a usePreferences. useRequest centraliza o ciclo de efeito, limpeza, cancelamento e descarte de resposta antiga. HistoryPanel recebe retry como onLoad e permite mudar seleção durante carregamento. O serviço aceita sinal externo além do timeout. Conversor permanece por submissão explícita.
+
+## Implementação atual — revisão final de 27/10/2026
+O mapa inicial acima é histórico de planejamento, não uma lista de arquivos ainda necessários.
+- App compartilha analysis e ui entre os componentes. Par do conversor é independente.
+- AppHeader recebe locale/theme/saved e callbacks.
+- CurrencyConverter controla entradas, consulta explícita e resultado; CurrencySelect é reutilizado.
+- HistoryPanel calcula estatísticas e carrega HistoryChart sob demanda via lazy/Suspense.
+- HistoryChart usa Recharts; não recebe filtros da tabela.
+- HistoryExplorer controla filtros/ordem, deriva visibleRows e envia essa mesma lista ao CSV.
+- A key de HistoryExplorer combina par/período, reiniciando seus filtros quando muda.
+- useCurrencies/useHistory usam useRequest; usePreferences persiste idioma/tema.
+- services/frankfurter valida respostas; utils concentra operações puras e download.
+- MarketIndicators permanece demonstrativo e não consulta API.
+Componentes menores sugeridos no mapa inicial foram mantidos dentro de seus responsáveis quando a extração não acrescentaria clareza.

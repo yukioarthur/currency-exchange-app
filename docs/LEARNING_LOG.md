@@ -125,3 +125,6 @@ Aplicado o agrupamento aprovado: efeitos automáticos e extração de useRequest
 
 ## 27/10/2026 — Bloco 2 (etapas 12–14)
 Recharts, filtros combinados, quatro ordenações e CSV conectados. Estudar estado derivado, imutabilidade, identidade por key e Blob. Guia completo e testes do aluno em BLOCK_02.md. Código verificado; commit e aprovação pelo aluno pendentes.
+
+## 27/10/2026 — Bloco final (etapas 15–16)
+Revisão local, correção em largura mínima, mensagens distintas para falha/ausência, carregamento do gráfico por lazy/Suspense, README consolidado e workflow Pages. Estudar build, hospedagem, CI, deploy, base e fast-forward em DELIVERY.md. Código verificado; commit/push e conferência online pelo aluno pendentes.

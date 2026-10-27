@@ -67,3 +67,6 @@ IA implementou etapas 10/11 e persistência. 23 testes de utilitários/serviço/
 
 ## 27/10/2026 — Bloco 2
 IA auxiliou na integração do Recharts, controles de filtros/ordenação, exportação CSV e testes. Foram executados 25 testes, validação das traduções, build e verificações no navegador, incluindo download real. O aluno deve revisar, compreender, testar e executar o commit. Nenhum commit ou push foi feito pela IA.
+
+## 27/10/2026 — Revisão final
+IA auxiliou na revisão de responsividade, mensagens de estado, divisão do carregamento do gráfico e configuração Pages baseada na documentação oficial Vite. Executou testes locais, conferiu interface e visibilidade pública do repositório. Atualizou documentos distinguindo verificações executadas e pendências. Não fez commit, push, merge, publicação, alteração no Figma ou execução no aplicativo Postman.
